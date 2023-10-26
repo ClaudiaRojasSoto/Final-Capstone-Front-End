@@ -7,8 +7,8 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 final\_capstone\_front\_end ](#-final_capstone_front_end-)
-  - [🛠 ER Diagram ](#-er-diagram-)
+- [📖 Final Capstone Front End ](#about-project)
+  - [🛠 ER Diagram ](#er-diagram)
   - [💻 link to back end ](#-link-to-back-end-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -33,13 +33,13 @@
 
 ## 🛠 ER Diagram <a name="er-diagram"></a>
 
-![ER Diagram](front_end_diagram.jpeg)
+![ER Diagram](diagram.jpeg)
 
 <p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
 
 ## 💻 link to back end <a name="link-to-back-end"></a>
 
-[Link to Back End](github.com/ClaudiaRojasSoto/Final-Capstone-Back-End)
+[Link to Back End](https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End)
 
 <p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
 
