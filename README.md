@@ -37,7 +37,7 @@
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
-## 💻 link to back end <a name="link-to-back-end"></a>
+## 💻 Link to Back End <a name="link-to-back-end"></a>
 
 [Link to Back End](https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End)
 
