@@ -35,13 +35,13 @@
 
 ![ER Diagram](diagram.jpeg)
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 💻 link to back end <a name="link-to-back-end"></a>
 
 [Link to Back End](https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End)
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -62,7 +62,7 @@
 - [x] **Responsive Design**
 - [x] **State Management**
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -112,7 +112,7 @@ npm start
 - GitHub: [@AlexandreFerreira](https://github.com/alexmedinasf)
 - LinkedIn: [@AlexandreFerreira](https://www.linkedin.com/in/alexmedinasf/)
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 🔭 Future Features <a name="future-features"></a>
 
@@ -120,7 +120,7 @@ npm start
 - [ ] **Integration with External APIs for Car Information**
 - [ ] **User Profile Management**
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 🤝 Contributing <a name="contributing"></a>
 
@@ -128,13 +128,13 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/ClaudiaRojasSoto/Final-Capstone-Front-End/issues).
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## ⭐️ Show your support <a name="support"></a>
 
 If you find this project helpful, feel free to contribute or give it a star. Your support is appreciated!
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 🙏 Acknowledgments <a name="acknowledgments"></a>
 
@@ -142,7 +142,7 @@ If you find this project helpful, feel free to contribute or give it a star. You
 - React.js Documentation for valuable resources on React development.
 - GitHub for version control and collaboration tools.
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## ❓ FAQ (OPTIONAL) <a name="faq"></a>
 
@@ -154,12 +154,12 @@ If you find this project helpful, feel free to contribute or give it a star. You
 
   - Yes, this project is open-source and available under the MIT License. You can find more details about the license [here](MIT.md).
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 📝 License <a name="license"></a>
 
 This project is licensed under the MIT License - you can click here to have more details [MIT](MIT.md).
 
-<p align="right"\>(\<a href="#readme-top"\>back to top\</a\>)\</p\>
+<p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ---------------------
