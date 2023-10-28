@@ -1,0 +1,28 @@
+
+.nav-link {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  background-color: #98bf11;
+  color: #fff !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.box-icon {
+  font-size: 90%;
+}
+
+.rigth-border {
+  border-right: 3px solid #efefef;
+}
+
+.custom-grow {
+  flex: 1;
+}
