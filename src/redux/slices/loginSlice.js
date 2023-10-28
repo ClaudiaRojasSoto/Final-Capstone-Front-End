@@ -1,0 +1,58 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+const loginSlice = createSlice({
+  name: 'login',
+  initialState: {
+    data: null,
+    loading: false,
+    error: null,
+  },
+  reducers: {
+    fetchDataStart: (state) => {
+      state.loading = true;
+      state.error = null;
+    },
+    fetchDataSuccess: (state, action) => {
+      state.loading = false;
+      state.data = action.payload;
+    },
+    fetchDataFailure: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+  },
+});
+
+export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = loginSlice.actions;
+
+export const loginAsync = (email, password) => async (dispatch) => {
+  dispatch(fetchDataStart()); // Inicia el estado de carga
+
+  try {
+    const response = await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        password,
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      dispatch(fetchDataSuccess(data)); // Dispatch éxito y datos
+    } else {
+      dispatch(fetchDataFailure('Error al iniciar sesión')); // Dispatch error
+    }
+  } catch (error) {
+    dispatch(fetchDataFailure('Error al realizar la solicitud')); // Dispatch error
+  }
+};
+
+export const selectData = (state) => state.login.data;
+export const selectLoading = (state) => state.login.loading;
+export const selectError = (state) => state.login.error;
+
+export default loginSlice.reducer;
