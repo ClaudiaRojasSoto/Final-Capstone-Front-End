@@ -27,7 +27,6 @@ export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = loginSlice
 
 export const loginAsync = (email, password) => async (dispatch) => {
   dispatch(fetchDataStart());
-
   try {
     const response = await fetch('http://localhost:3000/api/login', {
       method: 'POST',
@@ -43,7 +42,6 @@ export const loginAsync = (email, password) => async (dispatch) => {
     if (response.ok) {
       const data = await response.json();
       dispatch(fetchDataSuccess(data));
-      console.log('exitoso');
     } else {
       dispatch(fetchDataFailure('Error al iniciar sesión'));
     }
