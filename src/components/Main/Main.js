@@ -1,7 +1,7 @@
 import React from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 import Hero from '../Hero/Hero';
-import Login from '../Session/Login';
+import Login from '../session/Login';
 
 const Main = () => (
   <div className="container-fluid">

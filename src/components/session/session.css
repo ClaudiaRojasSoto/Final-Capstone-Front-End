@@ -1,0 +1,11 @@
+.App {
+  background-color: orange !important;
+  background-image: url('./car-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.custom-blur {
+  backdrop-filter: contrast(0.3);
+}
