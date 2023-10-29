@@ -11,7 +11,7 @@ function App() {
     <div className="App bg-light">
       <Router>
         <Routes>
-          <Route path="" element={<Session />} />
+          <Route path="/" element={<Session />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />

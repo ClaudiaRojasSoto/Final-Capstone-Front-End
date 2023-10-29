@@ -143,3 +143,9 @@ body {
 .social i {
   margin-right: 4px;
 }
+
+@media screen and (max-width: 769px) {
+  .App {
+    background-repeat: space;
+  }
+}
