@@ -22,7 +22,7 @@ const Login = () => {
           <h2>LogIn</h2>
           {loading && <div className="loading-message">Iniciando sesión...</div>}
           {error && <div className="error-message">Error al iniciar sesión. Por favor, verifica tus credenciales.</div>}
-          <form className="w-100" onSubmit={handleLogin}>
+          <form className="custom-blur p-5 w-75" onSubmit={handleLogin}>
             <div className="mb-3">
               <input type="email" className="form-control" placeholder="Correo electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>

@@ -7,5 +7,5 @@
 }
 
 .custom-blur {
-  backdrop-filter: contrast(0.3);
+  backdrop-filter: contrast(0.1);
 }
