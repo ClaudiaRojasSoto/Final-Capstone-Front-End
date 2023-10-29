@@ -20,18 +20,25 @@ const SignUp = () => {
     dispatch(registerAsync({ name, email, password }));
   };
 
+  const handleBack = (e) => {
+    e.preventDefault();
+    window.location.href = '/session';
+  };
+
   return (
-    <div className="container">
-      <div className="row justify-content-center align-items-center vh-100">
-        <div className="col-lg-6 col-md-8 col-sm-10">
-          <form onSubmit={handleSignUp} className="login-form">
+    <>
+      <button className="border-1 btn m-2 rounded-circle" onClick={handleBack} type="button">Back</button>
+      <div className="container">
+        <div className="row justify-content-center align-items-center vh-100">
+
+          <form onSubmit={handleSignUp} className="login-form col-7">
             <h3 className="mb-4">SignUp</h3>
 
             <div className="mb-3">
               <input
                 type="text"
                 className="form-control"
-                placeholder="Nombre"
+                placeholder="User Name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -42,7 +49,7 @@ const SignUp = () => {
               <input
                 type="email"
                 className="form-control"
-                placeholder="Correo electrónico"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -53,7 +60,7 @@ const SignUp = () => {
               <input
                 type="password"
                 className="form-control"
-                placeholder="Contraseña"
+                placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -61,15 +68,16 @@ const SignUp = () => {
             </div>
 
             <button type="submit" className="btn btn-primary mb-3">
-              Registrarse
+              SignUp
             </button>
 
-            {loading && <div className="loading-message">Registrando usuario...</div>}
+            {loading && <div className="loading-message">Register user...</div>}
             {error && <div className="error-message">{error}</div>}
           </form>
         </div>
       </div>
-    </div>
+    </>
+
   );
 };
 

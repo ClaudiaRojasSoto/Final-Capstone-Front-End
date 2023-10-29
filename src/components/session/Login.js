@@ -15,14 +15,22 @@ const Login = () => {
     dispatch(loginAsync(email, password));
   };
 
+  const handleBack = (e) => {
+    e.preventDefault();
+    window.location.href = '/session';
+  };
+
   return (
-    <div className="container">
-      <div className="row">
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <h2>LogIn</h2>
+    <>
+      <button className="border-1 btn m-2 rounded-circle" onClick={handleBack} type="button">Back</button>
+
+      <div className="container">
+        <div className="row justify-content-center align-items-center vh-100">
+
           {loading && <div className="loading-message">Iniciando sesión...</div>}
           {error && <div className="error-message">Error al iniciar sesión. Por favor, verifica tus credenciales.</div>}
-          <form className="custom-blur p-5 w-75" onSubmit={handleLogin}>
+          <form className="login-form col-7" onSubmit={handleLogin}>
+            <h2 className="text-center mb-4">SignUp</h2>
             <div className="mb-3">
               <input type="email" className="form-control" placeholder="Correo electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
@@ -33,7 +41,8 @@ const Login = () => {
           </form>
         </div>
       </div>
-    </div>
+
+    </>
 
   );
 };

@@ -1,15 +1,4 @@
-.App {
-  background-color: orange !important;
-  background-image: url('./car-bg.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.custom-blur {
-  backdrop-filter: contrast(0.1);
-}
-
+/* Estilos generales */
 *,
 *::before,
 *::after {
@@ -20,6 +9,15 @@
 
 body {
   background-color: #080710;
+}
+
+/* Estilos de la aplicación */
+.App {
+  background-color: orange !important;
+  background-image: url('./car-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .container {
@@ -57,6 +55,7 @@ body {
   bottom: -80px;
 }
 
+/* Estilos del formulario de login */
 .login-form {
   background-color: rgba(255, 255, 255, 0.13);
   position: absolute;
@@ -83,6 +82,7 @@ body {
   font-weight: 500;
   line-height: 42px;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .login-form label {
@@ -95,13 +95,14 @@ body {
 .login-form input {
   display: block;
   height: 50px;
-  width: 100%;
+  width: calc(100% - 20px);
   background-color: rgba(255, 255, 255, 0.07);
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
   font-size: 14px;
   font-weight: 300;
+  color: #fff;
 }
 
 .login-form input::placeholder {
@@ -110,7 +111,6 @@ body {
 
 .login-form button {
   margin-top: 50px;
-  width: 100%;
   background-color: #fff;
   color: #080710;
   padding: 15px 0;
@@ -118,21 +118,26 @@ body {
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
+  width: calc(100% - 20px);
 }
 
+/* Estilos de los botones de redes sociales */
 .social {
   margin-top: 30px;
   display: flex;
+  justify-content: center;
 }
 
 .social div {
   width: 150px;
   border-radius: 3px;
-  padding: 5px 10px 10px 5px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 0.27);
   color: #eaf0fb;
   text-align: center;
-  margin-left: 25px;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .social div:hover {
