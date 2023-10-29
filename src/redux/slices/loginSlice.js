@@ -26,7 +26,7 @@ const loginSlice = createSlice({
 export const { fetchDataStart, fetchDataSuccess, fetchDataFailure } = loginSlice.actions;
 
 export const loginAsync = (email, password) => async (dispatch) => {
-  dispatch(fetchDataStart()); // Inicia el estado de carga
+  dispatch(fetchDataStart());
 
   try {
     const response = await fetch('http://localhost:3000/api/login', {
@@ -42,12 +42,13 @@ export const loginAsync = (email, password) => async (dispatch) => {
 
     if (response.ok) {
       const data = await response.json();
-      dispatch(fetchDataSuccess(data)); // Dispatch éxito y datos
+      dispatch(fetchDataSuccess(data));
+      console.log('exitoso');
     } else {
-      dispatch(fetchDataFailure('Error al iniciar sesión')); // Dispatch error
+      dispatch(fetchDataFailure('Error al iniciar sesión'));
     }
   } catch (error) {
-    dispatch(fetchDataFailure('Error al realizar la solicitud')); // Dispatch error
+    dispatch(fetchDataFailure('Error al realizar la solicitud'));
   }
 };
 

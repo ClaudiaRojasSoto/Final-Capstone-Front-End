@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
 import {
   registerAsync,
   selectRegisterLoading,
@@ -14,23 +15,24 @@ const SignUp = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    dispatch(registerAsync({ name, email, password }));
-  };
-
-  const handleBack = (e) => {
-    e.preventDefault();
-    window.location.href = '/session';
+    dispatch(registerAsync({ name, email, password })).then((success) => {
+      if (success) {
+        navigate('/session');
+      }
+    });
   };
 
   return (
     <>
-      <button className="border-1 btn m-2 rounded-circle" onClick={handleBack} type="button">Back</button>
+      <button className="border-1 btn m-2 rounded-circle" onClick={() => navigate('/session')} type="button">
+        Back
+      </button>
       <div className="container">
         <div className="row justify-content-center align-items-center vh-100">
-
           <form onSubmit={handleSignUp} className="login-form col-7">
             <h3 className="mb-4">SignUp</h3>
 
@@ -77,7 +79,6 @@ const SignUp = () => {
         </div>
       </div>
     </>
-
   );
 };
 
