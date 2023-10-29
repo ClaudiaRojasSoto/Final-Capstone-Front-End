@@ -22,27 +22,51 @@ const SignUp = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="d-flex flex-column justify-content-center align-items-center vh-100">
-          <h2>SignUp</h2>
-          {loading && <div className="loading-message">Registrando usuario...</div>}
-          {error && <div className="error-message">{error}</div>}
-          {' '}
-          {/* Mostrar el mensaje de error */}
-          <div className="custom-blur p-5 w-75">
-            <form onSubmit={handleSignUp}>
-              <div className="mb-3">
-                <input type="text" className="form-control" placeholder="Nombre" value={name} onChange={(e) => setName(e.target.value)} required />
-              </div>
-              <div className="mb-3">
-                <input type="email" className="form-control" placeholder="Correo electrónico" value={email} onChange={(e) => setEmail(e.target.value)} required />
-              </div>
-              <div className="mb-3">
-                <input type="password" className="form-control" placeholder="Contraseña" value={password} onChange={(e) => setPassword(e.target.value)} required />
-              </div>
-              <button type="submit" className="btn btn-primary">Registrarse</button>
-            </form>
-          </div>
+      <div className="row justify-content-center align-items-center vh-100">
+        <div className="col-lg-6 col-md-8 col-sm-10">
+          <form onSubmit={handleSignUp} className="login-form">
+            <h3 className="mb-4">SignUp</h3>
+
+            <div className="mb-3">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <input
+                type="email"
+                className="form-control"
+                placeholder="Correo electrónico"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <input
+                type="password"
+                className="form-control"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary mb-3">
+              Registrarse
+            </button>
+
+            {loading && <div className="loading-message">Registrando usuario...</div>}
+            {error && <div className="error-message">{error}</div>}
+          </form>
         </div>
       </div>
     </div>
