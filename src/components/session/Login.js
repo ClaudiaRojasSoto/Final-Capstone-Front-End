@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate desde react-router-dom
+import { useNavigate } from 'react-router-dom';
 import {
   loginAsync, selectLoading, selectError, selectData,
 } from '../../redux/slices/loginSlice';
@@ -34,7 +34,7 @@ const Login = () => {
       <div className="container">
         <div className="row justify-content-center align-items-center">
           {loading && <div className="loading-message">Login...</div>}
-          {error && <div className="error-message text-bg-danger z-1">Login Error</div>}
+          {error && <div className="alert error-message text-bg-danger text-center w-50 z-1">Login Error</div>}
           <div className=" col-12 col-sm-8">
             <form className="login-form" onSubmit={handleLogin}>
               <h2 className="text-center mb-4">LogIn</h2>
@@ -42,7 +42,7 @@ const Login = () => {
                 <input
                   type="email"
                   className="bg-white form-control"
-                  placeholder="Correo electrónico"
+                  placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -52,7 +52,7 @@ const Login = () => {
                 <input
                   type="password"
                   className="bg-white form-control"
-                  placeholder="Contraseña"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
