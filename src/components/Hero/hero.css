@@ -1,0 +1,10 @@
+h1,
+h2,
+p,
+ul,
+li,
+a,
+span {
+  padding: 0;
+  margin: 0;
+}
