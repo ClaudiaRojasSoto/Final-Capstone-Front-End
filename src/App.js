@@ -5,6 +5,7 @@ import Login from './components/session/Login';
 import Signup from './components/session/SignUp';
 import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CarForm from './components/CarForm/CarForm';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
+          <Route path="/addcar" element={<CarForm />} />
         </Routes>
       </Router>
     </div>
