@@ -21,7 +21,7 @@ const SignUp = () => {
     e.preventDefault();
     dispatch(registerAsync({ name, email, password })).then((success) => {
       if (success) {
-        navigate('/session');
+        navigate('/');
       }
     });
   };
