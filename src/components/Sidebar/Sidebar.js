@@ -11,16 +11,16 @@ function Sidebar() {
       </div>
       <ul className="flex-column mt-3 nav">
         <li className="nav-item">
-          <a className="nav-link active text-black  " aria-current="page" href="#Models">MODELS</a>
+          <a className="nav-link active text-black  " aria-current="page" href="#Models">RESERVE MODEL</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="#LifeStyle">LIFE STYLE</a>
+          <a className="nav-link text-black " href="#LifeStyle">MY RESERVATIONS</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="#Shop">SHOP</a>
+          <a className="nav-link text-black " href="#Shop">ADD CAR</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="#testdrive">TESTDRIVE</a>
+          <a className="nav-link text-black " href="#testdrive">DELETE CAR</a>
         </li>
       </ul>
       <div className="align-items-end d-flex justify-content-evenly mb-3 custom-grow">

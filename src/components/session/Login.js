@@ -59,7 +59,7 @@ const Login = () => {
                 />
               </div>
               <button type="submit" className="btn btn-primary">
-                Iniciar sesión
+                Log In
               </button>
             </form>
 
