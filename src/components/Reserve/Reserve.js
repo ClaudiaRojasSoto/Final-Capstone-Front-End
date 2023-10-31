@@ -29,7 +29,7 @@ function Reserve() {
                 <label className="reserve-label">
                     City:
                     <select className="reserve-select" value={city} onChange={e => setCity(e.target.value)} required>
-                        {/* You can add more cities here */}
+                        {/* you can add more cities here */}
                         <option value="London">London</option>
                         <option value="New York">New York</option>
                     </select>
