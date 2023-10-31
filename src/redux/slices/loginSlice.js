@@ -37,6 +37,7 @@ export const loginAsync = (email, password) => async (dispatch) => {
         email,
         password,
       }),
+      credentials: 'include',
     });
 
     if (response.ok) {

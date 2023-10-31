@@ -6,6 +6,7 @@ import Signup from './components/session/SignUp';
 import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CarForm from './components/CarForm/CarForm';
+import ReservationList from './components/ReservationList/ReservationList';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
           <Route path="/addcar" element={<CarForm />} />
+          <Route path="/user_reservations" element={<ReservationList />} />
         </Routes>
       </Router>
     </div>
