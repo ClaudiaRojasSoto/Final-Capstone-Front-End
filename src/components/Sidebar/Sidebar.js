@@ -1,5 +1,6 @@
 import React from 'react';
 import './sidebar.css';
+import { Link } from 'react-router-dom';
 import carRental from './carRental.png';
 import 'boxicons';
 
@@ -17,7 +18,7 @@ function Sidebar() {
           <a className="nav-link text-black " href="#LifeStyle">MY RESERVATIONS</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="#Shop">ADD CAR</a>
+          <Link to="/addcar" className="nav-link active text-black">ADD CAR</Link>
         </li>
         <li className="nav-item">
           <a className="nav-link text-black " href="#testdrive">DELETE CAR</a>

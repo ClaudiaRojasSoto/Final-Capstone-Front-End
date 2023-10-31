@@ -33,7 +33,7 @@ const Login = () => {
 
       <div className="container">
         <div className="row justify-content-center align-items-center">
-          {loading && <div className="loading-message">Login...</div>}
+          {loading && <div className="loading-message text-bg-dark text-center w-50 z-2 rounded mb-2">Loading...</div>}
           {error && <div className="alert error-message text-bg-danger text-center w-50 z-1">Login Error</div>}
           <div className=" col-12 col-sm-8">
             <form className="login-form" onSubmit={handleLogin}>

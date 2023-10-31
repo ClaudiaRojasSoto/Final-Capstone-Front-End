@@ -1,0 +1,42 @@
+input {
+  padding-left: 0;
+  margin: 0;
+}
+
+.create-form {
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  max-height: 600px;
+}
+
+.input-field {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.App {
+  background-image: none;
+
+  /* background-image: url('../session/car-bg.png'); */
+  background-image: url('./car-form.png');
+}
+
+.input-text {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 769px) {
+  .input-text {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 405px) {
+  .input-text {
+    font-size: 10px;
+  }
+}
