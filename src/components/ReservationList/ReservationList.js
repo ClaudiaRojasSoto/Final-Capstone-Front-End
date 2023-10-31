@@ -8,6 +8,7 @@ import {
   selectReservationError,
 } from '../../redux/slices/reservationSlice';
 import '../session/session.css';
+import './reservationList.css';
 
 const ReservationList = () => {
   const dispatch = useDispatch();
@@ -35,17 +36,17 @@ const ReservationList = () => {
           <div className="col-12 col-sm-8">
             <div className="login-form">
               <h3 className="mb-4">Your Reservations</h3>
+              {loading && <div>Loading...</div>}
+              {error && (
+                <div>
+                  Error:
+                  {' '}
+                  {error}
+                </div>
+              )}
               <ul>
-                {loading && <div>Loading...</div>}
-                {error && (
-                  <div>
-                    Error:
-                    {' '}
-                    {error}
-                  </div>
-                )}
                 {reservations.map((reservationData) => (
-                  <li key={reservationData.reservation.id}>
+                  <li key={reservationData.reservation.id} className="reservation-item">
                     <div>
                       Car Name:
                       {' '}
@@ -71,7 +72,6 @@ const ReservationList = () => {
                       {' '}
                       {reservationData.car.deposit}
                     </div>
-                    ----
                   </li>
                 ))}
               </ul>
