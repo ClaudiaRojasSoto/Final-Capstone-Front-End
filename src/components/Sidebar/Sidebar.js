@@ -15,7 +15,7 @@ function Sidebar() {
           <a className="nav-link active text-black  " aria-current="page" href="#Models">RESERVE MODEL</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="#LifeStyle">MY RESERVATIONS</a>
+          <a className="nav-link text-black " href="/user_reservations">MY RESERVATIONS</a>
         </li>
         <li className="nav-item">
           <Link to="/addcar" className="nav-link active text-black">ADD CAR</Link>
