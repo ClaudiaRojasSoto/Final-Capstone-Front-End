@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import CarCard from '../CardCar/CardCar';
 
 const Hero = () => {
   const [carsData, setCarsData] = useState([]);
+  const carState = useSelector((state) => state.car.cars);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +30,7 @@ const Hero = () => {
     };
 
     fetchData();
-  }, []);
+  }, [carState]);
 
   return (
     <div className="container-fluid d-flex align-items-center justify-content-center vh-100">

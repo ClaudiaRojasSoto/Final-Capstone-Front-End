@@ -17,11 +17,13 @@ const CarCard = ({ cars }) => (
     {cars.map((car) => (
       <MDBCol key={car.id}>
         <MDBCard className="h-100">
-          <MDBCardImage
-            src={car.image_url}
-            alt={car.name}
-            position="top"
-          />
+          <div>
+            <MDBCardImage
+              src={car.image_url}
+              alt={car.name}
+              position="top"
+            />
+          </div>
           <MDBCardBody>
             <MDBCardText>{car.description}</MDBCardText>
           </MDBCardBody>
