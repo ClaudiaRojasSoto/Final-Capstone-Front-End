@@ -17,6 +17,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
           <Route path="/addcar" element={<CarForm />} />
+          <Route path="/reserve" component={Reserve} />
         </Routes>
       </Router>
     </div>
