@@ -34,7 +34,7 @@ export const deleteReservation = createAsyncThunk(
     }
 
     return reservationId;
-  }
+  },
 );
 
 // Definición del slice de reservas
@@ -68,7 +68,7 @@ const reservationSlice = createSlice({
       .addCase(deleteReservation.fulfilled, (state, action) => {
         state.loading = false;
         state.reservations = state.reservations.filter(
-          (reservation) => reservation.reservation.id !== action.payload
+          (reservation) => reservation.reservation.id !== action.payload,
         );
       })
       .addCase(deleteReservation.rejected, (state, action) => {
