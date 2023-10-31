@@ -26,7 +26,7 @@ const ReservationList = () => {
     <>
       <button
         className="border-1 btn m-2 rounded-circle"
-        onClick={() => navigate('/')}
+        onClick={() => navigate('/home')}
         type="button"
       >
         Back
@@ -40,7 +40,6 @@ const ReservationList = () => {
               {error && (
                 <div>
                   Error:
-                  {' '}
                   {error}
                 </div>
               )}
@@ -49,27 +48,22 @@ const ReservationList = () => {
                   <li key={reservationData.reservation.id} className="reservation-item">
                     <div>
                       Car Name:
-                      {' '}
                       {reservationData.car.name}
                     </div>
                     <div>
                       Start Time:
-                      {' '}
                       {new Date(reservationData.reservation.start_time).toLocaleString()}
                     </div>
                     <div>
                       End Time:
-                      {' '}
                       {new Date(reservationData.reservation.end_time).toLocaleString()}
                     </div>
                     <div>
                       City:
-                      {' '}
                       {reservationData.reservation.city}
                     </div>
                     <div>
                       Deposit:
-                      {' '}
                       {reservationData.car.deposit}
                     </div>
                   </li>
