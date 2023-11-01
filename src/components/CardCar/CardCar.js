@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 // Core modules imports are same as usual
 import { EffectCards, Navigation } from 'swiper/modules';
@@ -26,6 +25,7 @@ const CarCard = ({ cars }) => (
           <div className="h-100">
             <div>
               <img
+                style={{ minHeight: '70px', minWidth: '70px', objectFit: 'cover' }}
                 src={car.image_url}
                 alt={car.name}
               />
@@ -35,7 +35,6 @@ const CarCard = ({ cars }) => (
         </SwiperSlide>
       ))}
     </Swiper>
-
   </div>
 
 );

@@ -144,8 +144,9 @@ body {
   margin-right: 4px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
   .App {
     background-repeat: space;
+    background-color: inherit !important;
   }
 }

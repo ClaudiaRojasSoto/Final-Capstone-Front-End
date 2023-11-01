@@ -26,3 +26,14 @@ img {
 .custom-grow {
   flex: 1;
 }
+
+.navbar-toggler {
+  border: none !important;
+  margin-right: 1rem !important;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-width: 5rem !important;
+  }
+}

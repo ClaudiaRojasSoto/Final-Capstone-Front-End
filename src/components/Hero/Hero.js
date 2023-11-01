@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import CarCard from '../CardCar/CardCar';
+import './hero.css';
 
 const Hero = () => {
   const [carsData, setCarsData] = useState([]);
@@ -33,7 +34,7 @@ const Hero = () => {
   }, [carState]);
 
   return (
-    <div className="d-flex flex-column justify-content-center vh-100 w-100">
+    <div className="d-flex flex-column justify-content-center vh-100 w-100 nav-show">
       <div className="text-center">
         <div className="hero-title">
           <h2>LATEST MODELS</h2>
