@@ -8,7 +8,6 @@ import {
   selectReservationLoading,
   selectReservationError,
 } from '../../redux/slices/reservationSlice';
-import '../session/session.css';
 import './reservationList.css';
 
 const ReservationList = () => {
@@ -38,20 +37,20 @@ const ReservationList = () => {
       </button>
 
       <div className="container">
-        <div className="row justify-content-center align-items-center">
-          <div className="col-12 col-sm-8">
-            <div className="login-form">
-              <h3 className="mb-4">Your Reservations</h3>
+        <div className="align-items-center justify-content-center row text-center">
+          <div className="col-12">
+            <div className="reserve-form">
+              <h3 className="text-white">Your Reservations</h3>
+              {reservations.length === 0 && <div className="text-white">You dont have reservations yet</div>}
               {loading && <div>Loading...</div>}
               {error && (
                 <div>
                   Error:
-                  {error}
                 </div>
               )}
               <ul>
                 {reservations.map((reservationData) => (
-                  <li key={reservationData.reservation.id} className="reservation-item">
+                  <li key={reservationData.reservation.id} className="border-dark reservation-item">
                     <div>
                       Car Name:
                       {reservationData.car.name}
@@ -74,9 +73,9 @@ const ReservationList = () => {
                     </div>
                     <button
                       type="button"
-                      className="delete-btn"
+                      className="btn btn-danger btn-text"
                       onClick={() => {
-                        if (window.confirm('Are you sure you want to delete the reservation?')) {
+                        if (typeof window !== 'undefined' && window.confirm('Are you sure you want to delete the reservation?')) {
                           handleDelete(reservationData.reservation.id);
                         }
                       }}

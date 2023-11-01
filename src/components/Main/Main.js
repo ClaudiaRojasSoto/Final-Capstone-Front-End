@@ -7,13 +7,13 @@ import './main.css';
 const Main = () => (
   <div className="container-fluid">
     <div className="row">
-      <div className="col-2 col-3-md bg-white d-flex flex-column justify-content-between rigth-border side-hide">
+      <div className="col-3 col-3-md bg-white d-flex flex-column justify-content-between rigth-border side-hide">
         <Sidebar />
       </div>
       <div className="d-none d-show">
         <SidebarNav />
       </div>
-      <div className="col-10 col-9-md bg-white d-flex flex-column justify-content-between vh-100 rigth-border">
+      <div className="col-9 col-9-md bg-white d-flex flex-column justify-content-between vh-100 rigth-border">
         <Hero />
       </div>
     </div>
