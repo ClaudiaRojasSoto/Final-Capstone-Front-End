@@ -35,7 +35,8 @@ const CarCard = ({ cars }) => {
               <div>
                 <img src={car.image_url} alt={car.name} />
               </div>
-              <p>{car.name}</p>
+              <h6>{car.name}</h6>
+              <div className="text-secondary description-text">{car.description}</div>
             </div>
           </SwiperSlide>
         ))}
