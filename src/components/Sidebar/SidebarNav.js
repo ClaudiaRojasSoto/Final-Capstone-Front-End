@@ -9,7 +9,7 @@ function Sidebar() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Navbar bg="light" expand="lg" expanded={expanded}>
+    <Navbar expand="lg" expanded={expanded}>
       <Navbar.Brand>
         <img src={carRental} alt="logo" />
       </Navbar.Brand>
