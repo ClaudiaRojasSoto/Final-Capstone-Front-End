@@ -8,36 +8,41 @@ import './cardcar.css';
 // Styles must use direct files imports
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const CarCard = ({ cars }) => (
+const CarCard = ({ cars }) => {
+  const breakpoints = {
+    768: {
+      slidesPerView: 3,
+    },
 
-  <div className="slide-container">
-    <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      modules={[Navigation, EffectCards]}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-    >
-      {cars.map((car) => (
-        <SwiperSlide key={car.id}>
-          <div className="h-100">
-            <div>
-              <img
-                style={{ minHeight: '70px', minWidth: '70px', objectFit: 'cover' }}
-                src={car.image_url}
-                alt={car.name}
-              />
+  };
+
+  return (
+    <div className="slide-container">
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        modules={[Navigation, EffectCards]}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        breakpoints={breakpoints}
+      >
+        {cars.map((car) => (
+          <SwiperSlide key={car.id}>
+            <div className="h-100">
+              <div>
+                <img src={car.image_url} alt={car.name} />
+              </div>
+              <p>{car.name}</p>
             </div>
-            <p>{car.name}</p>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-
-);
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
 
 CarCard.propTypes = {
   cars: PropTypes.arrayOf(
