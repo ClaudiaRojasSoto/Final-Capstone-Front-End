@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import {
   fetchUserReservations,
+  deleteReservation,
   selectUserReservations,
   selectReservationLoading,
   selectReservationError,
@@ -22,6 +23,10 @@ const ReservationList = () => {
     dispatch(fetchUserReservations(id));
   }, [dispatch, id]);
 
+  const handleDelete = (reservationId) => {
+    dispatch(deleteReservation(reservationId));
+  };
+
   return (
     <>
       <button
@@ -31,6 +36,7 @@ const ReservationList = () => {
       >
         Back
       </button>
+
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-12 col-sm-8">
@@ -66,6 +72,17 @@ const ReservationList = () => {
                       Deposit:
                       {reservationData.car.deposit}
                     </div>
+                    <button
+                      type="button"
+                      className="delete-btn"
+                      onClick={() => {
+                        if (window.confirm('Are you sure you want to delete the reservation?')) {
+                          handleDelete(reservationData.reservation.id);
+                        }
+                      }}
+                    >
+                      Delete
+                    </button>
                   </li>
                 ))}
               </ul>
