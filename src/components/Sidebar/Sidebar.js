@@ -1,10 +1,18 @@
 import React from 'react';
-import './sidebar.css';
+import { useDispatch } from 'react-redux'; // Añadido
 import { Link } from 'react-router-dom';
+import { toggleDeleteMode } from '../../redux/slices/carSlice'; // Añadido
+import './sidebar.css';
 import carRental from './carRental.png';
 import 'boxicons';
 
-function Sidebar() {
+const Sidebar = () => {
+  const dispatch = useDispatch(); // Añadido
+
+  const handleDeleteClick = () => {
+    dispatch(toggleDeleteMode()); // Añadido
+  };
+
   return (
     <>
       <div className="picture">
@@ -12,16 +20,17 @@ function Sidebar() {
       </div>
       <ul className="flex-column mt-3 nav custom-size">
         <li className="nav-item">
-          <a className="nav-link active text-black  " aria-current="page" href="#Models">RESERVE MODEL</a>
+          <a className="nav-link active text-black" aria-current="page" href="#Models">RESERVE MODEL</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="/user_reservations">MY RESERVATIONS</a>
+          <a className="nav-link text-black" href="/user_reservations">MY RESERVATIONS</a>
         </li>
         <li className="nav-item">
           <Link to="/addcar" className="nav-link active text-black">ADD CAR</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black " href="#testdrive">DELETE CAR</a>
+          <button type="button" onClick={handleDeleteClick} className="nav-link text-black">DELETE CAR</button>
+          {/* Botón añadido */}
         </li>
       </ul>
       <div className="align-items-end d-flex justify-content-evenly mb-3 custom-grow">
@@ -41,9 +50,8 @@ function Sidebar() {
           <box-icon type="logo" name="pinterest-alt" />
         </a>
       </div>
-
     </>
   );
-}
+};
 
 export default Sidebar;
