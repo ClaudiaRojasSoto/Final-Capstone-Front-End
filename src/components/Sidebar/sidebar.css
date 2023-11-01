@@ -26,3 +26,32 @@ img {
 .custom-grow {
   flex: 1;
 }
+
+.navbar-toggler {
+  border: none !important;
+  margin-right: 1rem !important;
+}
+
+@media (max-width: 567px) {
+  .nav-link {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-width: 5rem !important;
+  }
+}
+
+@media (max-width: 852px) {
+  .custom-size {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 1000px) {
+  .custom-size {
+    font-size: 20px !important;
+  }
+}

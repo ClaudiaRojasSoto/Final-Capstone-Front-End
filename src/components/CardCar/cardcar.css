@@ -1,0 +1,9 @@
+
+.swiper img {
+  max-height: 300px !important;
+}
+
+.description-text {
+  font-size: 12px;
+  font-weight: 300;
+}

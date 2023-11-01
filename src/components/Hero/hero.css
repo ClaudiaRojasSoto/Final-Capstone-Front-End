@@ -1,10 +1,13 @@
-h1,
-h2,
-p,
-ul,
-li,
-a,
-span {
-  padding: 0;
-  margin: 0;
+@media screen and (max-width: 767px) {
+  .nav-show {
+    height: auto !important;
+  }
+
+  .top-mobile {
+    border-top: 1px solid gray !important;
+  }
+
+  .hero-title h2 {
+    padding-top: 1rem !important;
+  }
 }

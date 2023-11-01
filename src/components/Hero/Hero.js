@@ -1,16 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import CarCard from '../CardCar/CardCar';
+import './hero.css';
 
-const hero = () => (
-  <div>
-    <div className="hero-title text-center">
-      <h2>LATEST MODELS</h2>
-      <p className="text-black-50">Please Select a Car Model</p>
-    </div>
-    <div>
-      <CarCard />
-    </div>
-  </div>
-);
+const Hero = () => {
+  const [carsData, setCarsData] = useState([]);
+  const carState = useSelector((state) => state.car.cars);
 
-export default hero;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/api/cars', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+        });
+
+        if (!response.ok) {
+          throw new Error('Error fetching cars');
+        }
+
+        const data = await response.json();
+        setCarsData(data);
+      } catch (error) {
+        throw new Error('Error fetching cars');
+      }
+    };
+
+    fetchData();
+  }, [carState]);
+
+  return (
+    <div className="d-flex flex-column justify-content-center vh-100 w-100 nav-show">
+      <div className="text-center top-mobile">
+        <div className="hero-title">
+          <h2>LATEST MODELS</h2>
+          <p className="text-black-50">Please Select a Car Model</p>
+        </div>
+        <div className="mt-5">
+          <CarCard cars={carsData} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

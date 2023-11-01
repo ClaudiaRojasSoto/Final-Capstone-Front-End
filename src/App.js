@@ -10,7 +10,7 @@ import ReservationList from './components/ReservationList/ReservationList';
 
 function App() {
   return (
-    <div className="App bg-light">
+    <div className="App">
       <Router>
         <Routes>
           <Route path="/" element={<Session />} />
