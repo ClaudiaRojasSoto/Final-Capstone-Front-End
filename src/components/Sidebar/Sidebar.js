@@ -10,7 +10,7 @@ function Sidebar() {
       <div className="picture">
         <img src={carRental} alt="logo" />
       </div>
-      <ul className="flex-column mt-3 nav">
+      <ul className="flex-column mt-3 nav custom-size">
         <li className="nav-item">
           <a className="nav-link active text-black  " aria-current="page" href="#Models">RESERVE MODEL</a>
         </li>

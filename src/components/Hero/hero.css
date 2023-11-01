@@ -2,4 +2,12 @@
   .nav-show {
     height: auto !important;
   }
+
+  .top-mobile {
+    border-top: 1px solid gray !important;
+  }
+
+  .hero-title h2 {
+    padding-top: 1rem !important;
+  }
 }

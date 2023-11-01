@@ -24,9 +24,8 @@ const Hero = () => {
 
         const data = await response.json();
         setCarsData(data);
-        console.log('Cars Data:', data);
       } catch (error) {
-        console.error('Error fetching cars:', error);
+        throw new Error('Error fetching cars');
       }
     };
 
@@ -35,7 +34,7 @@ const Hero = () => {
 
   return (
     <div className="d-flex flex-column justify-content-center vh-100 w-100 nav-show">
-      <div className="text-center">
+      <div className="text-center top-mobile">
         <div className="hero-title">
           <h2>LATEST MODELS</h2>
           <p className="text-black-50">Please Select a Car Model</p>

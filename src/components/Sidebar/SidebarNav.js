@@ -15,7 +15,7 @@ function Sidebar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto d-flex flex-row justify-content-between  navbar-nav">
           <Nav.Link as={Link} to="#Models" onClick={() => setExpanded(false)}>
             RESERVE MODEL
           </Nav.Link>
