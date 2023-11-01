@@ -33,7 +33,7 @@ const Hero = () => {
   }, [carState]);
 
   return (
-    <div className="container-fluid d-flex align-items-center justify-content-center vh-100">
+    <div className="vh-100">
       <div className="text-center">
         <div className="hero-title">
           <h2>LATEST MODELS</h2>

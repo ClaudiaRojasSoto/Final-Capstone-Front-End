@@ -1,39 +1,49 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
-import {
-  MDBCard,
-  MDBCardImage,
-  MDBCardBody,
-  MDBCardTitle,
-  MDBCardText,
-  MDBCardFooter,
-  MDBRow,
-  MDBCol,
-} from 'mdb-react-ui-kit';
+// Core modules imports are same as usual
+import { Navigation } from 'swiper/modules';
+// Direct React component imports
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Styles must use direct files imports
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const CarCard = ({ cars }) => (
-  <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-    {cars.map((car) => (
-      <MDBCol key={car.id}>
-        <MDBCard className="h-100">
-          <div>
-            <MDBCardImage
-              src={car.image_url}
-              alt={car.name}
-              position="top"
-            />
+
+  <div style={{ maxHeight: '200px' }}>
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      modules={[Navigation]}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+    >
+      {cars.map((car) => (
+        <SwiperSlide key={car.id}>
+
+          <div className="h-100">
+            <div>
+              <img
+                src={car.image_url}
+                alt={car.name}
+              />
+            </div>
+
+            <p>{car.description}</p>
+
+            <p>{car.name}</p>
+
           </div>
-          <MDBCardBody>
-            <MDBCardText>{car.description}</MDBCardText>
-          </MDBCardBody>
-          <MDBCardFooter>
-            <MDBCardTitle>{car.name}</MDBCardTitle>
-          </MDBCardFooter>
-        </MDBCard>
-      </MDBCol>
-    ))}
-  </MDBRow>
+
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+  </div>
+
 );
 
 CarCard.propTypes = {
