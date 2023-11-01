@@ -1,21 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// Core modules imports are same as usual
+import { useSelector, useDispatch } from 'react-redux'; // Añadido
 import { EffectCards, Navigation } from 'swiper/modules';
-// Direct React component imports
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { deleteCar } from '../../redux/slices/carSlice'; // Añadido
 import './cardcar.css';
-// Styles must use direct files imports
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const CarCard = ({ cars }) => {
+  const dispatch = useDispatch();
+  const deleteMode = useSelector((state) => state.car.deleteMode);
+
+  const handleDeleteCar = (carId) => {
+    // Añadido
+    dispatch(deleteCar(carId));
+  };
+
   const breakpoints = {
     768: {
       slidesPerView: 3,
     },
-
   };
 
   return (
@@ -35,8 +41,10 @@ const CarCard = ({ cars }) => {
               <div>
                 <img src={car.image_url} alt={car.name} />
               </div>
-              <h6>{car.name}</h6>
-              <div className="text-secondary description-text">{car.description}</div>
+              <p>{car.name}</p>
+              {deleteMode && (
+                <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button> // Añadido
+              )}
             </div>
           </SwiperSlide>
         ))}
@@ -50,7 +58,6 @@ CarCard.propTypes = {
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
       image_url: PropTypes.string.isRequired,
     }),
   ).isRequired,
