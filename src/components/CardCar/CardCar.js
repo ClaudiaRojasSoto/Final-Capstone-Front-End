@@ -43,7 +43,7 @@ const CarCard = ({ cars }) => {
               </div>
               <p>{car.name}</p>
               {deleteMode && (
-                <button type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button> // Añadido
+                <button className="btn btn-outline-danger btn-sm" type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button> // Añadido
               )}
             </div>
           </SwiperSlide>

@@ -106,7 +106,6 @@ const CarForm = () => {
               <div className="mt-2 text-center">
                 <button type="submit" className="btn btn-primary ">Create Car</button>
               </div>
-
             </form>
           </div>
         </div>

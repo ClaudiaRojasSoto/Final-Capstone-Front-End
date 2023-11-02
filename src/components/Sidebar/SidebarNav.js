@@ -1,12 +1,21 @@
 import { Navbar, Nav } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toggleDeleteMode } from '../../redux/slices/carSlice';
 import carRental from './carRental.png';
 import 'boxicons';
 import './sidebar.css';
 
 function Sidebar() {
+  const dispatch = useDispatch();
   const [expanded, setExpanded] = useState(false);
+
+  const handleDeleteClick = () => {
+    dispatch(toggleDeleteMode());
+    setExpanded(false);
+    // Otras operaciones de eliminación si las tienes
+  };
 
   return (
     <Navbar expand="lg" expanded={expanded}>
@@ -15,7 +24,7 @@ function Sidebar() {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto d-flex flex-row justify-content-between  navbar-nav">
+        <Nav className="mr-auto d-flex flex-row justify-content-between navbar-nav">
           <Nav.Link as={Link} to="#Models" onClick={() => setExpanded(false)}>
             RESERVE MODEL
           </Nav.Link>
@@ -25,12 +34,11 @@ function Sidebar() {
           <Nav.Link as={Link} to="/addcar" onClick={() => setExpanded(false)}>
             ADD CAR
           </Nav.Link>
-          <Nav.Link href="#testdrive" onClick={() => setExpanded(false)}>
+          <Nav.Link href="#testdrive" onClick={handleDeleteClick}>
             DELETE CAR
           </Nav.Link>
         </Nav>
       </Navbar.Collapse>
-
     </Navbar>
   );
 }
