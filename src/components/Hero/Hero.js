@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import CarCard from '../CardCar/CardCar';
 import './hero.css';
 
 const Hero = () => {
   const [carsData, setCarsData] = useState([]);
   const carState = useSelector((state) => state.car.cars);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -32,6 +33,10 @@ const Hero = () => {
     fetchData();
   }, [carState]);
 
+  const handleCarClick = (carId) => {
+    navigate(`/car-details/${carId}`);
+  };
+
   return (
     <div className="d-flex flex-column justify-content-center vh-100 w-100 nav-show">
       <div className="text-center top-mobile">
@@ -40,7 +45,7 @@ const Hero = () => {
           <p className="text-black-50">Please Select a Car Model</p>
         </div>
         <div className="mt-5">
-          <CarCard cars={carsData} />
+          <CarCard cars={carsData} onCarClick={handleCarClick} />
         </div>
       </div>
     </div>

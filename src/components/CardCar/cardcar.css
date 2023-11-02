@@ -19,7 +19,7 @@
   white-space: nowrap;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 769px) {
   .text-size {
     font-size: 10px;
     font-weight: 300;

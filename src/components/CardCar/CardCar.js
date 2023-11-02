@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch } from 'react-redux'; // Añadido
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
+import { useSelector, useDispatch } from 'react-redux';
 import { EffectCards, Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { deleteCar } from '../../redux/slices/carSlice'; // Añadido
+import { deleteCar } from '../../redux/slices/carSlice';
 import './cardcar.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -14,7 +15,6 @@ const CarCard = ({ cars }) => {
   const deleteMode = useSelector((state) => state.car.deleteMode);
 
   const handleDeleteCar = (carId) => {
-    // Añadido
     dispatch(deleteCar(carId));
   };
 
@@ -44,7 +44,14 @@ const CarCard = ({ cars }) => {
               <h6 className="card-name">{car.name}</h6>
               <p className="m-0 mb-3 p-0 text-black-50 text-size long-description">{car.description}</p>
               {deleteMode && (
-                <button className="btn btn-outline-danger btn-sm" type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button> // Añadido
+                <button className="btn btn-outline-danger btn-sm" type="button" onClick={() => handleDeleteCar(car.id)}>
+                  Delete
+                </button>
+              )}
+              {!deleteMode && (
+                <Link to={`/car-details/${car.id}`} className="btn btn-outline-primary btn-sm">
+                  View Details
+                </Link>
               )}
             </div>
           </SwiperSlide>
