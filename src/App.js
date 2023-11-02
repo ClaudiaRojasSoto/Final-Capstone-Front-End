@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import CarForm from './components/CarForm/CarForm';
 import ReservationList from './components/ReservationList/ReservationList';
 import CarDetails from './components/CarDetails/CarDetails';
+import ReservePage from './components/ReservePage/ReservePage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/addcar" element={<CarForm />} />
           <Route path="/user_reservations" element={<ReservationList />} />
           <Route path="/car-details/:id" element={<CarDetails />} />
+          <Route path="/reserve/:carId" element={<ReservePage />} />
         </Routes>
       </Router>
     </div>
