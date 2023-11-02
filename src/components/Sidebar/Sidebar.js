@@ -23,7 +23,7 @@ function Sidebar() {
         <li className="nav-item">
           <a className="nav-link text-black " href="#testdrive">DELETE CAR</a>
         </li>
-         <li className="nav-item">
+        <li className="nav-item">
           <Link to="/reserve" className="nav-link active text-black">RESERVE</Link>
         </li>
       </ul>
