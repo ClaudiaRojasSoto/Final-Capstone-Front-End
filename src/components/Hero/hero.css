@@ -1,3 +1,7 @@
+.margin-desktop {
+  margin-top: 5rem;
+}
+
 @media screen and (max-width: 767px) {
   .nav-show {
     height: auto !important;
@@ -9,5 +13,9 @@
 
   .hero-title h2 {
     padding-top: 1rem !important;
+  }
+
+  .margin-desktop {
+    margin-top: 0;
   }
 }

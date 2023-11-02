@@ -38,13 +38,9 @@ const Hero = () => {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center vh-100 w-100 nav-show">
+    <div className="d-flex flex-column justify-content-center nav-show">
       <div className="text-center top-mobile">
-        <div className="hero-title">
-          <h2>LATEST MODELS</h2>
-          <p className="text-black-50">Please Select a Car Model</p>
-        </div>
-        <div className="mt-5">
+        <div className="margin-desktop">
           <CarCard cars={carsData} onCarClick={handleCarClick} />
         </div>
       </div>

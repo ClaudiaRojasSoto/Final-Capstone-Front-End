@@ -1,3 +1,10 @@
+.no-pad {
+  padding: 0 !important;
+}
+
+.reservation-text {
+  font-size: 15px;
+}
 
 .nav-link {
   transition: background-color 0.3s, color 0.3s;
