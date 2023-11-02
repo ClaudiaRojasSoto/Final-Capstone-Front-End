@@ -1,0 +1,78 @@
+.reserve-container {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #B25601;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: url('./form-car.png');
+  }
+  
+  .reserve-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: rgb(2, 2, 2);
+  }
+  
+  .back-button {
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border-radius: 5px;
+  }
+
+  .reserve-info {
+    margin-bottom: 20px;
+    font-size: 25px;
+    text-align: center;
+    width: 80%;
+    color: rgb(255, 255, 255);
+  }
+  
+  .reserve-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .reserve-label,
+  .reserve-date {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    color: black;
+    font-size: 18px;
+  }
+  
+  .reserve-date input[type="date"],
+  .reserve-select {
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 16px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .reserve-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reserve-btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
