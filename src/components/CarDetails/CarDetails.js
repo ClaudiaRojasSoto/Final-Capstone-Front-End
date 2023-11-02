@@ -1,10 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './cardetails.css';
 
+import PropTypes from 'prop-types';
+
 const CarDetails = ({ car }) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   if (!car) {
     return null;
   }
@@ -67,16 +68,42 @@ const CarDetails = ({ car }) => {
           </p>
         </div>
       </div>
-      {/* <button
-        className="border-1 btn m-2 rounded-circle"
+      <button
+        className="btn btn-success"
         onClick={() => navigate(-2)}
         type="button"
       >
         Back
-      </button> */}
+      </button>
 
     </>
   );
+};
+
+CarDetails.propTypes = {
+  car: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    image_url: PropTypes.string.isRequired,
+    finance_fee: PropTypes.number.isRequired,
+    option_to_purchase_fee: PropTypes.number.isRequired,
+    total_amount_payable: PropTypes.number.isRequired,
+    duration: PropTypes.number.isRequired,
+  }),
+};
+
+CarDetails.defaultProps = {
+  car: {
+    id: 0,
+    name: '',
+    description: '',
+    image_url: '',
+    finance_fee: 0,
+    option_to_purchase_fee: 0,
+    total_amount_payable: 0,
+    duration: 0,
+  },
 };
 
 export default CarDetails;
