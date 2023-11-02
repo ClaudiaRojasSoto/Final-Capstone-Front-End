@@ -20,9 +20,7 @@ input {
 
 .App {
   background-image: none;
-
-  /* background-image: url('../session/car-bg.png'); */
-  background-image: url('./car-form.png');
+  background-image: url('../session/car-bg.png');
 }
 
 .input-text {

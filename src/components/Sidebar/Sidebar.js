@@ -18,15 +18,15 @@ const Sidebar = () => {
       <div className="picture">
         <img src={carRental} alt="logo" />
       </div>
-      <ul className="flex-column mt-3 nav custom-size">
+      <ul className="flex-column mt-3 nav fs-6 no-pad">
         <li className="nav-item">
           <a className="nav-link active text-black" aria-current="page" aria-label="Reserve Model" href="#Models">RESERVE MODEL</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black" aria-label="My Reservations" href="/user_reservations">MY RESERVATIONS</a>
+          <a className="nav-link text-black reservation-text" aria-label="My Reservations" href="/user_reservations">MY RESERVATIONS</a>
         </li>
         <li className="nav-item">
-          <Link to="/addcar" className="nav-link active text-black" aria-label="Add Car">ADD CAR</Link>
+          <Link to="/addcar" className="nav-link active text-black" aria-label="Add Car">ADD CARS</Link>
         </li>
         <li className="nav-item">
           <button type="button" onClick={handleDeleteClick} className="nav-link text-black" aria-label="Delete Car">DELETE CAR</button>

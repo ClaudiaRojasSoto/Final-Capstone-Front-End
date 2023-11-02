@@ -1,0 +1,17 @@
+.custom-high {
+  height: 65vh !important;
+}
+
+p {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .custom-set {
+    flex-direction: column !important;
+  }
+
+  img {
+    width: 50% !important;
+  }
+}
