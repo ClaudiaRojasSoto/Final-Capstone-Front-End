@@ -26,7 +26,7 @@ const Sidebar = () => {
           <a className="nav-link text-black reservation-text" aria-label="My Reservations" href="/user_reservations">MY RESERVATIONS</a>
         </li>
         <li className="nav-item">
-          <Link to="/addcar" className="nav-link active text-black" aria-label="Add Car">ADD CAR</Link>
+          <Link to="/addcar" className="nav-link active text-black" aria-label="Add Car">ADD CARS</Link>
         </li>
         <li className="nav-item">
           <button type="button" onClick={handleDeleteClick} className="nav-link text-black" aria-label="Delete Car">DELETE CAR</button>
