@@ -18,3 +18,36 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@media screen and (min-width: 767px) {
+  .text-size {
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .long-description {
+    overflow: visible;
+    text-overflow: inherit;
+    white-space: inherit;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .text-size {
+    font-size: 16px;
+  }
+
+  .card-name {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .text-size {
+    font-size: 20px;
+  }
+
+  .card-name {
+    font-size: 24px;
+  }
+}

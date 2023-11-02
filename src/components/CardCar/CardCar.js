@@ -41,7 +41,7 @@ const CarCard = ({ cars }) => {
               <div>
                 <img src={car.image_url} alt={car.name} />
               </div>
-              <h6>{car.name}</h6>
+              <h6 className="card-name">{car.name}</h6>
               <p className="m-0 mb-3 p-0 text-black-50 text-size long-description">{car.description}</p>
               {deleteMode && (
                 <button className="btn btn-outline-danger btn-sm" type="button" onClick={() => handleDeleteCar(car.id)}>Delete</button> // Añadido
