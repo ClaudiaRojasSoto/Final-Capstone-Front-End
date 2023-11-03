@@ -103,7 +103,7 @@ const ReservePageFromSideBar = () => {
         Username:
         {currentUser ? currentUser.name : 'Loading...'}
       </p>
-      <form onSubmit={handleReservation}>git b
+      <form onSubmit={handleReservation}>
         <div>
           <label htmlFor="start_time">
             Start Time:
