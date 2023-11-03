@@ -5,6 +5,7 @@
 @media screen and (max-width: 767px) {
   .nav-show {
     height: auto !important;
+    margin-top: 0 !important;
   }
 
   .top-mobile {
