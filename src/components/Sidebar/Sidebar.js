@@ -35,7 +35,6 @@ const Sidebar = () => {
         </li>
       </ul>
       <div className="align-items-end d-flex justify-content-evenly mb-3 custom-grow">
-        {/* aria-labels added below */}
         <a href="enlace-de-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
           <box-icon type="logo" name="twitter" />
         </a>

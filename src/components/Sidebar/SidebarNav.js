@@ -25,7 +25,7 @@ function Sidebar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={() => setExpanded(!expanded)} />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto d-flex flex-row justify-content-between navbar-nav">
-          <Nav.Link as={Link} to="#Models" onClick={() => setExpanded(false)}>
+          <Nav.Link as={Link} to="/reserve" onClick={() => setExpanded(false)}>
             RESERVE MODEL
           </Nav.Link>
           <Nav.Link as={Link} to="/user_reservations" onClick={() => setExpanded(false)}>
