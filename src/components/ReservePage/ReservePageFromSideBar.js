@@ -110,79 +110,92 @@ const ReservePageFromSideBar = () => {
   };
 
   return (
-    <div>
-      <h1>Reserve a Car</h1>
-      {carDetails && (
-        <div>
-          <p>
-            Car Model:
-            {carDetails.name}
-          </p>
+    <>
+      <button className="border-1 btn m-2 rounded-circle" onClick={() => navigate('/home')} type="button">
+        Back
+      </button>
+      <div className="container">
+        <div className="justify-content-center row">
+          <div className="col-10">
+            <form onSubmit={handleReservation} className="create-form p-2 text-white">
+              <h3 className="text-center">Reserve a Car</h3>
+              {carDetails && (
+              <div className="mb-1 px-3">
+                <p>
+                  Car Model:
+                  {' '}
+                  {carDetails.name}
+                </p>
+              </div>
+              )}
+              {!carId && (
+              <div className="mb-1 px-3">
+                <label htmlFor="car_selection" className="form-label">
+                  Select a Car:
+                  <select
+                    className="form-select"
+                    id="car_selection"
+                    value={selectedCarId}
+                    onChange={(e) => setSelectedCarId(e.target.value)}
+                    required
+                  >
+                    <option value="">Select a car...</option>
+                    {cars.map((car) => (
+                      <option key={car.id} value={car.id}>
+                        {car.name}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              </div>
+              )}
+              <div className="mb-1 px-3">
+                <label htmlFor="start_time" className="form-label">
+                  Start Time:
+                  <input
+                    type="datetime-local"
+                    className="form-control"
+                    id="start_time"
+                    value={startTime}
+                    onChange={(e) => setStartTime(e.target.value)}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mb-1 px-3">
+                <label htmlFor="end_time" className="form-label">
+                  End Time:
+                  <input
+                    type="datetime-local"
+                    className="form-control"
+                    id="end_time"
+                    value={endTime}
+                    onChange={(e) => setEndTime(e.target.value)}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="mb-1 px-3">
+                <label htmlFor="city" className="form-label">
+                  City:
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="city"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                    required
+                  />
+                </label>
+              </div>
+              <div className="d-flex justify-content-center">
+                <button type="submit" className="btn btn-success">Reserve</button>
+              </div>
+            </form>
+          </div>
         </div>
-      )}
-      {!carId && (
-        <div>
-          <label htmlFor="car_selection">
-            Select a Car:
-            <select
-              id="car_selection"
-              value={selectedCarId}
-              onChange={(e) => setSelectedCarId(e.target.value)}
-              required
-            >
-              {cars.map((car) => (
-                <option key={car.id} value={car.id}>
-                  {car.name}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      )}
-      <p>
-        Username:
-        {currentUser ? currentUser.name : 'Loading...'}
-      </p>
-      <form onSubmit={handleReservation}>
-        <div>
-          <label htmlFor="start_time">
-            Start Time:
-            <input
-              type="datetime-local"
-              id="start_time"
-              value={startTime}
-              onChange={(e) => setStartTime(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="end_time">
-            End Time:
-            <input
-              type="datetime-local"
-              id="end_time"
-              value={endTime}
-              onChange={(e) => setEndTime(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="city">
-            City:
-            <input
-              type="text"
-              id="city"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <button type="submit">Reserve</button>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,26 @@
+.rounded-back-btn {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 8px 14px 9px 34px;
+  background-color: #97bf0f;
+  font-weight: 700;
+}
+
+.text-btn-white {
+  color: #fff;
+}
+
 .custom-high {
   height: 65vh !important;
+}
+
+.to-left {
+  text-align: left !important;
+  padding-left: 12px;
+}
+
+.btn:hover:hover {
+  background-color: #97bf0f !important;
 }
 
 p {
@@ -13,5 +34,10 @@ p {
 
   img {
     width: 50% !important;
+  }
+
+  .to-left {
+    text-align: inherit !important;
+    padding-left: 0;
   }
 }

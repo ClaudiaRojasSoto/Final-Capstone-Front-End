@@ -2,6 +2,20 @@
   max-height: 300px !important;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: #97bf0f;
+  top: var(--swiper-navigation-top-offset, 42%);
+}
+
+.swiper-button-prev::after {
+  content: "◀";
+}
+
+.swiper-button-next::after {
+  content: "▶";
+}
+
 .description-text {
   font-size: 12px;
   font-weight: 300;

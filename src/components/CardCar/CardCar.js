@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -6,6 +5,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { EffectCards, Navigation } from 'swiper/modules';
 import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import CarDetails from '../CarDetails/CarDetails';
 import { deleteCar } from '../../redux/slices/carSlice';
 import './cardcar.css';
@@ -14,7 +14,6 @@ const CarCard = ({ cars }) => {
   const dispatch = useDispatch();
   const deleteMode = useSelector((state) => state.car.deleteMode);
   const [selectedCar, setSelectedCar] = useState(null);
-  const [showCarDetails, setShowCarDetails] = useState(false);
   const breakpoints = {
     768: {
       slidesPerView: 3,
@@ -23,7 +22,6 @@ const CarCard = ({ cars }) => {
 
   const handleCarClick = (car) => {
     setSelectedCar(car);
-    setShowCarDetails(true);
   };
 
   const handleDeleteCar = (carId) => {
@@ -32,20 +30,19 @@ const CarCard = ({ cars }) => {
 
   const handleGoBack = () => {
     setSelectedCar(null);
-    setShowCarDetails(false);
   };
 
   return (
     <div className="slide-container">
-      {!showCarDetails && (
-        <div className="text-center ">
+      {!selectedCar && (
+        <div className="text-center">
           <div className="hero-title">
             <h2>LATEST MODELS</h2>
-            <p className="  text-black-50">Please Select a Car Model</p>
+            <p className="text-black-50">Please Select a Car Model</p>
           </div>
         </div>
       )}
-      {showCarDetails ? (
+      {selectedCar ? (
         <CarDetails car={selectedCar} onGoBack={handleGoBack} />
       ) : (
         <Swiper
@@ -64,17 +61,16 @@ const CarCard = ({ cars }) => {
                 <h6 className="card-name">{car.name}</h6>
                 <div className="custom">
                   <p className="m-0 mb-3 p-0 text-black-50 text-size long-description custom-h">{car.description}</p>
-                  <button type="button" className="btn btn-outline-primary btn-sm" onClick={() => handleCarClick(car)}>
-                    View Details
-                  </button>
-                </div>
-                {deleteMode && (
-                  <div className="">
+                  {deleteMode ? (
                     <button type="button" className="btn btn-outline-danger btn-sm my-1" onClick={() => handleDeleteCar(car.id)}>
                       Delete
                     </button>
-                  </div>
-                )}
+                  ) : (
+                    <button type="button" className="btn btn-outline-primary btn-sm" onClick={() => handleCarClick(car)}>
+                      View Details
+                    </button>
+                  )}
+                </div>
               </div>
             </SwiperSlide>
           ))}
@@ -82,6 +78,17 @@ const CarCard = ({ cars }) => {
       )}
     </div>
   );
+};
+
+CarCard.propTypes = {
+  cars: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image_url: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default CarCard;

@@ -16,4 +16,8 @@
     display: block !important;
     background-color: rgb(255, 255, 255) !important;
   }
+
+  .vh-100 {
+    height: calc(100vh - 66px) !important;
+  }
 }

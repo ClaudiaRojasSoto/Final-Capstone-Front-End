@@ -50,30 +50,35 @@ const ReservationList = () => {
               )}
               <ul>
                 {reservations.map((reservationData) => (
-                  <li key={reservationData.reservation.id} className="border-dark reservation-item">
+                  <li key={reservationData.reservation.id} className="border-dark reservation-item text-white">
                     <div>
-                      Car Name:
+                      <span className="text-warning">Car Name:</span>
+                      {' '}
                       {reservationData.car.name}
                     </div>
                     <div>
-                      Start Time:
+                      <span className="text-warning">Start Time:</span>
+                      {' '}
                       {new Date(reservationData.reservation.start_time).toLocaleString()}
                     </div>
                     <div>
-                      End Time:
+                      <span className="text-warning">End Time:</span>
+                      {' '}
                       {new Date(reservationData.reservation.end_time).toLocaleString()}
                     </div>
                     <div>
-                      City:
+                      <span className="text-warning">City:</span>
+                      {' '}
                       {reservationData.reservation.city}
                     </div>
                     <div>
-                      Deposit:
+                      <span className="text-warning">Deposit:</span>
+                      {' '}
                       {reservationData.car.deposit}
                     </div>
                     <button
                       type="button"
-                      className="btn btn-danger btn-text"
+                      className="btn btn-danger btn-text mt-2"
                       onClick={() => {
                         if (typeof window !== 'undefined' && window.confirm('Are you sure you want to delete the reservation?')) {
                           handleDelete(reservationData.reservation.id);

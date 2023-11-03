@@ -1,17 +1,17 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import './cardetails.css';
 
 import PropTypes from 'prop-types';
 
-const CarDetails = ({ car }) => {
-  const navigate = useNavigate();
+const CarDetails = ({ car, onGoBack }) => {
   if (!car) {
     return null;
   }
 
   return (
     <>
+
       <div className="align-items-center bg-white d-flex justify-content-center custom-high custom-set mt-2">
         <div className="row" />
         <div className="col-12 col-md-7">
@@ -59,7 +59,7 @@ const CarDetails = ({ car }) => {
               </p>
             </h6>
           </div>
-          <p className="text-end">
+          <p className="text-end to-left">
             {' '}
             5.29 APR
             {' '}
@@ -68,14 +68,14 @@ const CarDetails = ({ car }) => {
           </p>
         </div>
       </div>
+
       <button
-        className="btn btn-success"
-        onClick={() => navigate(`/reserve/${car.id}`)}
+        className="btn btn-toolbar text-btn-white rounded-back-btn"
+        onClick={() => onGoBack()}
         type="button"
       >
-        Reserve
+        ◀
       </button>
-
     </>
   );
 };
@@ -91,6 +91,7 @@ CarDetails.propTypes = {
     total_amount_payable: PropTypes.number.isRequired,
     duration: PropTypes.number.isRequired,
   }),
+  onGoBack: PropTypes.func.isRequired,
 };
 
 CarDetails.defaultProps = {
