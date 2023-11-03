@@ -1,29 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getCurrentUser } from '../../redux/slices/userSlice';
 
 const ReservePageFromSideBar = () => {
-  const { carId } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
 
   const [cars, setCars] = useState([]);
   const [selectedCarId, setSelectedCarId] = useState('');
-  const [carDetails, setCarDetails] = useState(null);
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [city, setCity] = useState('');
 
-  // Obtener el usuario actual si no está cargado
   useEffect(() => {
     if (!currentUser) {
       dispatch(getCurrentUser());
     }
   }, [dispatch, currentUser]);
 
-  // Obtener la información de todos los coches para el menú desplegable si no se proporciona carId
   useEffect(() => {
     const fetchCars = async () => {
       try {
@@ -38,39 +34,13 @@ const ReservePageFromSideBar = () => {
         }
         const carsData = await response.json();
         setCars(carsData);
-        if (!carId && carsData.length > 0) {
-          setSelectedCarId(carsData[0].id); // Preseleccionar el primer coche por defecto
-        }
+        setSelectedCarId(carsData[0]?.id);
       } catch (error) {
         console.error('Error fetching cars:', error);
       }
     };
-
-    if (!carId) {
-      fetchCars();
-    }
-  }, [carId]);
-
-  // Obtener detalles del coche seleccionado cuando hay un carId
-  useEffect(() => {
-    if (carId) {
-      const fetchCarDetails = async () => {
-        try {
-          const response = await fetch(`http://localhost:3000/api/cars/${carId}`);
-          if (!response.ok) {
-            throw new Error('Failed to fetch car details');
-          }
-          const data = await response.json();
-          setCarDetails(data);
-          setSelectedCarId(carId);
-        } catch (error) {
-          console.error('Error fetching car details:', error);
-        }
-      };
-
-      fetchCarDetails();
-    }
-  }, [carId]);
+    fetchCars();
+  }, []);
 
   const handleReservation = async (e) => {
     e.preventDefault();
@@ -112,38 +82,28 @@ const ReservePageFromSideBar = () => {
   return (
     <div>
       <h1>Reserve a Car</h1>
-      {carDetails && (
-        <div>
-          <p>
-            Car Model:
-            {carDetails.name}
-          </p>
-        </div>
-      )}
-      {!carId && (
-        <div>
-          <label htmlFor="car_selection">
-            Select a Car:
-            <select
-              id="car_selection"
-              value={selectedCarId}
-              onChange={(e) => setSelectedCarId(e.target.value)}
-              required
-            >
-              {cars.map((car) => (
-                <option key={car.id} value={car.id}>
-                  {car.name}
-                </option>
-              ))}
-            </select>
-          </label>
-        </div>
-      )}
+      <div>
+        <label htmlFor="car_selection">
+          Select a Car:
+          <select
+            id="car_selection"
+            value={selectedCarId}
+            onChange={(e) => setSelectedCarId(e.target.value)}
+            required
+          >
+            {cars.map((car) => (
+              <option key={car.id} value={car.id}>
+                {car.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
       <p>
         Username:
         {currentUser ? currentUser.name : 'Loading...'}
       </p>
-      <form onSubmit={handleReservation}>
+      <form onSubmit={handleReservation}>git b
         <div>
           <label htmlFor="start_time">
             Start Time:
