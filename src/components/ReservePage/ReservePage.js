@@ -1,42 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { getCurrentUser } from '../../redux/slices/userSlice';
 
 const ReservePage = () => {
   const { carId } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
 
-  const [carDetails, setCarDetails] = useState(null);
+  const [cars, setCars] = useState([]);
+  const [selectedCarId, setSelectedCarId] = useState(carId || '');
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [city, setCity] = useState('');
 
   useEffect(() => {
-    const fetchCarDetails = async () => {
+    dispatch(getCurrentUser());
+  }, [dispatch]);
+
+  useEffect(() => {
+    const fetchCars = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/cars/${carId}`);
+        const response = await fetch('http://localhost:3000/api/cars', {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          credentials: 'include',
+        });
         if (!response.ok) {
-          throw new Error('Failed to fetch car details.');
+          throw new Error('Error fetching cars');
         }
         const data = await response.json();
-        setCarDetails(data.car);
+        setCars(data);
+        if (!carId) {
+          setSelectedCarId(data[0]?.id);
+        }
       } catch (error) {
-        console.error('Error fetching car details:', error);
+        console.error('Error:', error);
       }
     };
 
-    if (carId) {
-      fetchCarDetails();
+    if (!carId) {
+      fetchCars();
     }
   }, [carId]);
-
-  useEffect(() => {
-    if (!currentUser) {
-      dispatch(getCurrentUser());
-    }
-  }, [dispatch, currentUser]);
 
   const handleReservation = async (e) => {
     e.preventDefault();
@@ -45,21 +53,20 @@ const ReservePage = () => {
       return;
     }
 
-    if (!carDetails) {
-      alert('Please wait for the car information to load.');
+    if (!carId && !selectedCarId) {
+      alert('Please select a car to proceed with the reservation.');
       return;
     }
 
     const reservationData = {
-      reservation: {
-        start_time: startTime,
-        end_time: endTime,
-        city,
-      },
+      start_time: startTime,
+      end_time: endTime,
+      city,
+      car_id: selectedCarId,
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/cars/${carId}/reservations`, {
+      const response = await fetch(`http://localhost:3000/api/cars/${selectedCarId}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,6 +82,7 @@ const ReservePage = () => {
 
       await response.json();
       alert('Reservation made successfully!');
+      navigate('/user_reservations');
     } catch (error) {
       alert(error.message);
     }
@@ -83,24 +91,29 @@ const ReservePage = () => {
   return (
     <div>
       <h1>Reserve a Car</h1>
-      {carDetails ? (
+      {!carId && (
         <div>
-          <p>
-            Car Model:
-            {carDetails.name}
-          </p>
+          <label htmlFor="car_selection">
+            Select a Car:
+            <select
+              id="car_selection"
+              value={selectedCarId}
+              onChange={(e) => setSelectedCarId(e.target.value)}
+              required
+            >
+              {cars.map((car) => (
+                <option key={car.id} value={car.id}>
+                  {car.name}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
-      ) : (
-        <p>Loading car details...</p>
       )}
-      {currentUser ? (
-        <p>
-          Username:
-          {currentUser.name}
-        </p>
-      ) : (
-        <p>Loading user information...</p>
-      )}
+      <p>
+        Username:
+        {currentUser ? currentUser.name : 'Loading...'}
+      </p>
       <form onSubmit={handleReservation}>
         <div>
           <label htmlFor="start_time">
@@ -110,6 +123,7 @@ const ReservePage = () => {
               id="start_time"
               value={startTime}
               onChange={(e) => setStartTime(e.target.value)}
+              required
             />
           </label>
         </div>
@@ -121,6 +135,7 @@ const ReservePage = () => {
               id="end_time"
               value={endTime}
               onChange={(e) => setEndTime(e.target.value)}
+              required
             />
           </label>
         </div>
@@ -132,12 +147,11 @@ const ReservePage = () => {
               id="city"
               value={city}
               onChange={(e) => setCity(e.target.value)}
+              required
             />
           </label>
         </div>
-        <button type="submit">
-          Reserve
-        </button>
+        <button type="submit">Reserve</button>
       </form>
     </div>
   );
