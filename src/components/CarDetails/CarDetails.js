@@ -70,10 +70,10 @@ const CarDetails = ({ car }) => {
       </div>
       <button
         className="btn btn-success"
-        onClick={() => navigate(-2)}
+        onClick={() => navigate(`/reserve/${car.id}`)}
         type="button"
       >
-        Back
+        Reserve
       </button>
 
     </>

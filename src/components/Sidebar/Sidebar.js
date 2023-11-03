@@ -20,7 +20,9 @@ const Sidebar = () => {
       </div>
       <ul className="flex-column mt-3 nav fs-6 no-pad">
         <li className="nav-item">
-          <a className="nav-link active text-black" aria-current="page" aria-label="Reserve Model" href="#Models">RESERVE MODEL</a>
+          <Link to="/reserve" className="nav-link active text-black" aria-current="page" aria-label="Reserve Model">
+            RESERVE MODEL
+          </Link>
         </li>
         <li className="nav-item">
           <a className="nav-link text-black reservation-text" aria-label="My Reservations" href="/user_reservations">MY RESERVATIONS</a>
