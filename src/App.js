@@ -11,15 +11,18 @@ import ReservationList from './components/ReservationList/ReservationList';
 import ReservePageFromDetails from './components/ReservePage/ReservePageFromDetails';
 import ReservePageFromSideBar from './components/ReservePage/ReservePageFromSideBar';
 import carBgImage from './components/session/car-bg.png';
+import './app.css';
 
 const App = () => {
   const [bgColor, setBgColor] = useState('orange');
   const [bgImage, setBgImage] = useState(carBgImage);
   return (
     <Router>
-      <div style={{
-        backgroundColor: bgColor, minHeight: '100vh', backgroundImage: `url(${carBgImage})`, backgroundSize: 'cover', backgroundPosition: 'center',
-      }}
+      <div
+        className="main"
+        style={{
+          backgroundColor: bgColor, minHeight: '100vh', backgroundImage: `url(${carBgImage})`, backgroundSize: 'cover', backgroundPosition: 'center',
+        }}
       >
         <Routes>
           <Route path="/" element={<Session />} />
