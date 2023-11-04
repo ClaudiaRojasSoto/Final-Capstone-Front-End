@@ -59,16 +59,20 @@ const CarCard = ({ cars }) => {
               <div className="h-100 car-card">
                 <img src={car.image_url} alt={car.name} />
                 <h6 className="card-name">{car.name}</h6>
-                <div className="custom">
-                  <p className="m-0 mb-3 p-0 text-black-50 text-size long-description custom-h">{car.description}</p>
+                <div className="custom pb-1">
+                  <p className="m-0 p-0 text-black-50 text-size long-description custom-h">{car.description}</p>
                   {deleteMode ? (
-                    <button type="button" className="btn btn-outline-danger btn-sm my-1" onClick={() => handleDeleteCar(car.id)}>
-                      Delete
-                    </button>
+                    <div className="custom-mobile-view">
+                      <button type="button" className="btn btn-outline-danger btn-sm my-1" onClick={() => handleDeleteCar(car.id)}>
+                        Delete
+                      </button>
+                    </div>
                   ) : (
-                    <button type="button" className="btn btn-outline-primary btn-sm" onClick={() => handleCarClick(car)}>
-                      View Details
-                    </button>
+                    <div className="custom-mobile-view">
+                      <button type="button" className="btn btn-outline-primary btn-sm" onClick={() => handleCarClick(car)}>
+                        View Details
+                      </button>
+                    </div>
                   )}
                 </div>
               </div>

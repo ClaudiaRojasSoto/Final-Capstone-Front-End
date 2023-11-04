@@ -1,3 +1,8 @@
+h6,
+h2 {
+  margin-bottom: 0 !important;
+}
+
 .swiper img {
   max-height: 300px !important;
 }
@@ -32,6 +37,14 @@
   white-space: nowrap;
 }
 
+.custom {
+  margin-top: 1rem !important;
+}
+
+.custom-mobile-view {
+  margin-top: 1rem;
+}
+
 @media screen and (min-width: 767px) {
   .text-size {
     font-size: 10px;
@@ -39,7 +52,7 @@
   }
 
   .custom-h {
-    min-height: 90px;
+    min-height: 60px;
   }
 
   .long-description {
@@ -59,7 +72,7 @@
   }
 
   .custom-h {
-    min-height: 126px;
+    min-height: 60px;
   }
 }
 

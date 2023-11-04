@@ -6,6 +6,16 @@
   font-weight: 700;
 }
 
+.bullet-back-btn {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 9px 14px 9px 14px;
+  background-color: #97bf0f;
+  font-weight: 700;
+}
+
 .text-btn-white {
   color: #fff;
 }
@@ -34,6 +44,14 @@ p {
 
   img {
     width: 50% !important;
+  }
+
+  .mobile-margin {
+    margin-bottom: 0 !important;
+  }
+
+  .padding-mobile {
+    padding: 0 !important;
   }
 
   .to-left {

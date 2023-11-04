@@ -1,29 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { getCurrentUser } from '../../redux/slices/userSlice';
 
 const ReservePageFromSideBar = () => {
-  const { carId } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
 
   const [cars, setCars] = useState([]);
   const [selectedCarId, setSelectedCarId] = useState('');
-  const [carDetails, setCarDetails] = useState(null);
   const [startTime, setStartTime] = useState('');
   const [endTime, setEndTime] = useState('');
   const [city, setCity] = useState('');
 
-  // Obtener el usuario actual si no está cargado
   useEffect(() => {
     if (!currentUser) {
       dispatch(getCurrentUser());
     }
   }, [dispatch, currentUser]);
 
-  // Obtener la información de todos los coches para el menú desplegable si no se proporciona carId
   useEffect(() => {
     const fetchCars = async () => {
       try {
@@ -38,39 +34,13 @@ const ReservePageFromSideBar = () => {
         }
         const carsData = await response.json();
         setCars(carsData);
-        if (!carId && carsData.length > 0) {
-          setSelectedCarId(carsData[0].id); // Preseleccionar el primer coche por defecto
-        }
+        setSelectedCarId(carsData[0]?.id);
       } catch (error) {
         console.error('Error fetching cars:', error);
       }
     };
-
-    if (!carId) {
-      fetchCars();
-    }
-  }, [carId]);
-
-  // Obtener detalles del coche seleccionado cuando hay un carId
-  useEffect(() => {
-    if (carId) {
-      const fetchCarDetails = async () => {
-        try {
-          const response = await fetch(`http://localhost:3000/api/cars/${carId}`);
-          if (!response.ok) {
-            throw new Error('Failed to fetch car details');
-          }
-          const data = await response.json();
-          setCarDetails(data);
-          setSelectedCarId(carId);
-        } catch (error) {
-          console.error('Error fetching car details:', error);
-        }
-      };
-
-      fetchCarDetails();
-    }
-  }, [carId]);
+    fetchCars();
+  }, []);
 
   const handleReservation = async (e) => {
     e.preventDefault();
@@ -115,86 +85,79 @@ const ReservePageFromSideBar = () => {
         Back
       </button>
       <div className="container">
-        <div className="justify-content-center row">
+        <div className="row justify-content-center">
           <div className="col-10">
-            <form onSubmit={handleReservation} className="create-form p-2 text-white">
-              <h3 className="text-center">Reserve a Car</h3>
-              {carDetails && (
-              <div className="mb-1 px-3">
-                <p>
-                  Car Model:
-                  {' '}
-                  {carDetails.name}
-                </p>
+            <div className="card bg-transparent border-light mt-5">
+              <div className="card-body create-form vh-75 mobile-text-reserve">
+                <h3 className="text-center text-white ">Reserve a Car</h3>
+                <div className="my-1">
+                  <p className="my-1 text-bg-light text-center">
+                    Current User:
+                    {currentUser ? currentUser.name : 'Loading...'}
+                  </p>
+                  <label htmlFor="car_selection">
+                    Select Car:
+                    <select
+                      id="car_selection"
+                      value={selectedCarId}
+                      onChange={(e) => setSelectedCarId(e.target.value)}
+                      required
+                    >
+                      {cars.map((car) => (
+                        <option key={car.id} value={car.id}>
+                          {car.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+                <form className="needs-validation" noValidate onSubmit={handleReservation}>
+                  <div>
+                    <label htmlFor="start_time">
+                      Start Time:
+                      <input
+                        type="datetime-local"
+                        id="start_time"
+                        value={startTime}
+                        onChange={(e) => setStartTime(e.target.value)}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="my-1">
+                    <label htmlFor="end_time">
+                      Final Time:
+                      <input
+                        type="datetime-local"
+                        id="end_time"
+                        value={endTime}
+                        onChange={(e) => setEndTime(e.target.value)}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="my-1">
+                    <label htmlFor="city">
+                      Pick a city:
+                      <input
+                        type="text"
+                        id="city"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="text-center">
+                    <button className="btn btn-success" type="submit">Reserve</button>
+                  </div>
+                </form>
               </div>
-              )}
-              {!carId && (
-              <div className="mb-1 px-3">
-                <label htmlFor="car_selection" className="form-label">
-                  Select a Car:
-                  <select
-                    className="form-select"
-                    id="car_selection"
-                    value={selectedCarId}
-                    onChange={(e) => setSelectedCarId(e.target.value)}
-                    required
-                  >
-                    <option value="">Select a car...</option>
-                    {cars.map((car) => (
-                      <option key={car.id} value={car.id}>
-                        {car.name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              </div>
-              )}
-              <div className="mb-1 px-3">
-                <label htmlFor="start_time" className="form-label">
-                  Start Time:
-                  <input
-                    type="datetime-local"
-                    className="form-control"
-                    id="start_time"
-                    value={startTime}
-                    onChange={(e) => setStartTime(e.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="mb-1 px-3">
-                <label htmlFor="end_time" className="form-label">
-                  End Time:
-                  <input
-                    type="datetime-local"
-                    className="form-control"
-                    id="end_time"
-                    value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="mb-1 px-3">
-                <label htmlFor="city" className="form-label">
-                  City:
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="city"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                    required
-                  />
-                </label>
-              </div>
-              <div className="d-flex justify-content-center">
-                <button type="submit" className="btn btn-success">Reserve</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
+
     </>
   );
 };

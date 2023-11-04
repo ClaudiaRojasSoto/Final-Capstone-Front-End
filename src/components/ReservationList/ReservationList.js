@@ -50,7 +50,7 @@ const ReservationList = () => {
               )}
               <ul>
                 {reservations.map((reservationData) => (
-                  <li key={reservationData.reservation.id} className="border-dark reservation-item text-white">
+                  <li key={reservationData.reservation.id} className="border-dark reservation-item text-white fs-10">
                     <div>
                       <span className="text-warning">Car Name:</span>
                       {' '}

@@ -39,7 +39,7 @@ const Hero = () => {
 
   return (
     <div className="d-flex flex-column justify-content-center nav-show mt-4">
-      <div className="text-center top-mobile mt-3">
+      <div className="text-center top-mobile mt-1">
         <div className="margin-desktop">
           <CarCard cars={carsData} onCarClick={handleCarClick} />
         </div>

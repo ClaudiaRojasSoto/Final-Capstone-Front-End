@@ -40,7 +40,7 @@ const SignUp = () => {
               <div className="mb-3">
                 <input
                   type="text"
-                  className="bg-white form-control"
+                  className="form-control"
                   placeholder="User Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -51,7 +51,7 @@ const SignUp = () => {
               <div className="mb-3">
                 <input
                   type="email"
-                  className="bg-white form-control"
+                  className="form-control"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +62,7 @@ const SignUp = () => {
               <div className="mb-3">
                 <input
                   type="password"
-                  className="bg-white form-control"
+                  className="form-control"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

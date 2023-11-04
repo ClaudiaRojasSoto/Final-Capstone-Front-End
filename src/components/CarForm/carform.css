@@ -27,7 +27,18 @@ input {
   font-size: 16px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
+  .mobile-text-reserve {
+    font-size: 12px;
+  }
+
+  .mobile-text-reserve h3 {
+    color: #000 !important;
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (max-width: 1769px) {
   .input-text {
     font-size: 14px;
   }
