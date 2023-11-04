@@ -73,18 +73,18 @@ const CarDetails = ({ car, onGoBack }) => {
               onClick={() => navigate(`/reserve/${car.id}`)}
               type="button"
             >
-              ☸ Reserve  ▹
+              Reserve  ▹
             </button>
           </div>
         </div>
       </div>
 
       <button
-        className="btn btn-toolbar text-btn-white rounded-back-btn"
+        className="btn btn-toolbar text-btn-white rounded-back-btn fs-5"
         onClick={() => onGoBack()}
         type="button"
       >
-        ◀
+        &laquo;
       </button>
 
     </>

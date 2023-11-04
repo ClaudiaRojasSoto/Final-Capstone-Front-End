@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { getCurrentUser } from '../../redux/slices/userSlice';
 
-const ReservePageFromSideBar = () => {
+const ReservePageFromSideBar = ({ setBgColor }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -21,6 +22,21 @@ const ReservePageFromSideBar = () => {
   }, [dispatch, currentUser]);
 
   useEffect(() => {
+    if (!currentUser) {
+      dispatch(getCurrentUser());
+    }
+
+    // Cambiar el color de fondo usando setBgColor cuando el componente se monta
+    setBgColor('#96bf01');
+
+    // Limpieza al desmontar el componente (opcional)
+    return () => {
+      // Restaurar el color de fondo al valor predeterminado o al que desees
+      setBgColor('#ffffff');
+    };
+  }, [dispatch, currentUser, setBgColor]);
+
+  useEffect(() => {
     const fetchCars = async () => {
       try {
         const response = await fetch('http://localhost:3000/api/cars', {
@@ -36,7 +52,7 @@ const ReservePageFromSideBar = () => {
         setCars(carsData);
         setSelectedCarId(carsData[0]?.id);
       } catch (error) {
-        console.error('Error fetching cars:', error);
+        throw new Error(error.message);
       }
     };
     fetchCars();
@@ -84,7 +100,10 @@ const ReservePageFromSideBar = () => {
       <button className="border-1 btn m-2 rounded-circle" onClick={() => navigate('/home')} type="button">
         Back
       </button>
-      <div className="container">
+      <div
+        className="container"
+
+      >
         <div className="row justify-content-center">
           <div className="col-10">
             <div className="card bg-transparent border-light mt-5">
@@ -161,5 +180,7 @@ const ReservePageFromSideBar = () => {
     </>
   );
 };
-
+ReservePageFromSideBar.propTypes = {
+  setBgColor: PropTypes.func.isRequired, // setBgColor debe ser una función y es requerida
+};
 export default ReservePageFromSideBar;

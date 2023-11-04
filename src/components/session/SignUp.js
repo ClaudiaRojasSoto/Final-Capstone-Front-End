@@ -6,7 +6,6 @@ import {
   selectRegisterLoading,
   selectRegisterError,
 } from '../../redux/slices/registerSlice';
-import './session.css';
 
 const SignUp = () => {
   const dispatch = useDispatch();
