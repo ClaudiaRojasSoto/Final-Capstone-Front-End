@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <>
-      <button className="border-1 btn m-2 rounded-circle" onClick={() => navigate('/')} type="button">
+      <button className="border-1 btn m-2 rounded-circle btn-warning" onClick={() => navigate('/')} type="button">
         Back
       </button>
 

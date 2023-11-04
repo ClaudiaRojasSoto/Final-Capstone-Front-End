@@ -29,7 +29,7 @@ const ReservationList = () => {
   return (
     <>
       <button
-        className="border-1 btn m-2 rounded-circle"
+        className="border-1 btn m-2 rounded-circle btn-warning"
         onClick={() => navigate('/home')}
         type="button"
       >
