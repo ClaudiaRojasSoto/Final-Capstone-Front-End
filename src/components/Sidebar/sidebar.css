@@ -2,9 +2,9 @@
   padding: 0 !important;
 }
 
-#icon,
+.icon,
 svg {
-  width: 80% !important;
+  font-size: 10px;
 }
 
 .reservation-text {

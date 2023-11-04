@@ -43,7 +43,7 @@ const CarForm = () => {
       <div className="container">
         <div className="row justify-content-center align-items-center">
           <div className="col-10">
-            <form onSubmit={handleSubmit} className="create-form p-2 text-white">
+            <form onSubmit={handleSubmit} className="create-form p-2 text-white text-mobile-black">
               <h3 className=" text-center ">Create Car</h3>
               <div>
                 <div>
