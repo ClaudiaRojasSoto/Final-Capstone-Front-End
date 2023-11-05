@@ -35,20 +35,19 @@ const Sidebar = () => {
         </li>
       </ul>
       <div className="align-items-end d-flex justify-content-evenly mb-3 custom-grow">
-        {/* aria-labels added below */}
-        <a href="enlace-de-twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-          <box-icon type="logo" name="twitter" />
+        <a href="https://twitter.com/home" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <box-icon className="icon" type="logo" name="twitter" />
         </a>
-        <a href="enlace-de-facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <box-icon type="logo" name="facebook" />
         </a>
-        <a href="enlace-de-google" target="_blank" rel="noopener noreferrer" aria-label="Google">
+        <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google">
           <box-icon type="logo" name="google" />
         </a>
-        <a href="enlace-de-vimeo" target="_blank" rel="noopener noreferrer" aria-label="Vimeo">
+        <a href="https://vimeo.com/" target="_blank" rel="noopener noreferrer" aria-label="Vimeo">
           <box-icon type="logo" name="vimeo" />
         </a>
-        <a href="enlace-de-pinterest" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+        <a href="https://pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
           <box-icon type="logo" name="pinterest-alt" />
         </a>
       </div>

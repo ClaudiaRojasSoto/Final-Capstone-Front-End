@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { getCurrentUser } from '../../redux/slices/userSlice';
 
-const ReservePageFromSideBar = () => {
+const ReservePageFromSideBar = ({ setBgColor }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.user.currentUser);
@@ -18,7 +19,13 @@ const ReservePageFromSideBar = () => {
     if (!currentUser) {
       dispatch(getCurrentUser());
     }
-  }, [dispatch, currentUser]);
+
+    setBgColor('#96bf01');
+
+    return () => {
+      setBgColor('#ffffff');
+    };
+  }, [dispatch, currentUser, setBgColor]);
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -36,7 +43,7 @@ const ReservePageFromSideBar = () => {
         setCars(carsData);
         setSelectedCarId(carsData[0]?.id);
       } catch (error) {
-        console.error('Error fetching cars:', error);
+        throw new Error(error.message);
       }
     };
     fetchCars();
@@ -80,70 +87,89 @@ const ReservePageFromSideBar = () => {
   };
 
   return (
-    <div>
-      <h1>Reserve a Car</h1>
-      <div>
-        <label htmlFor="car_selection">
-          Select a Car:
-          <select
-            id="car_selection"
-            value={selectedCarId}
-            onChange={(e) => setSelectedCarId(e.target.value)}
-            required
-          >
-            {cars.map((car) => (
-              <option key={car.id} value={car.id}>
-                {car.name}
-              </option>
-            ))}
-          </select>
-        </label>
+    <>
+      <button className="border-1 btn m-2 rounded-circle btn-warning" onClick={() => navigate('/home')} type="button">
+        Back
+      </button>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-10">
+            <div className="card bg-transparent border-light mt-5">
+              <div className="card-body create-form vh-75 mobile-text-reserve">
+                <h3 className="text-center text-white ">Reserve a Car</h3>
+                <div className="my-1">
+                  <p className="my-1 text-bg-light text-center">
+                    Current User:
+                    {currentUser ? currentUser.name : 'Loading...'}
+                  </p>
+                  <label htmlFor="car_selection">
+                    Select Car:
+                    <select
+                      id="car_selection"
+                      value={selectedCarId}
+                      onChange={(e) => setSelectedCarId(e.target.value)}
+                      required
+                    >
+                      {cars.map((car) => (
+                        <option key={car.id} value={car.id}>
+                          {car.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
+                <form className="needs-validation" noValidate onSubmit={handleReservation}>
+                  <div>
+                    <label htmlFor="start_time">
+                      Start Time:
+                      <input
+                        type="datetime-local"
+                        id="start_time"
+                        value={startTime}
+                        onChange={(e) => setStartTime(e.target.value)}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="my-1">
+                    <label htmlFor="end_time">
+                      Final Time:
+                      <input
+                        type="datetime-local"
+                        id="end_time"
+                        value={endTime}
+                        onChange={(e) => setEndTime(e.target.value)}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="my-1">
+                    <label htmlFor="city">
+                      Pick a city:
+                      <input
+                        type="text"
+                        id="city"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        required
+                      />
+                    </label>
+                  </div>
+                  <div className="text-center">
+                    <button className="btn btn-success" type="submit">Reserve</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <p>
-        Username:
-        {currentUser ? currentUser.name : 'Loading...'}
-      </p>
-      <form onSubmit={handleReservation}>
-        <div>
-          <label htmlFor="start_time">
-            Start Time:
-            <input
-              type="datetime-local"
-              id="start_time"
-              value={startTime}
-              onChange={(e) => setStartTime(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="end_time">
-            End Time:
-            <input
-              type="datetime-local"
-              id="end_time"
-              value={endTime}
-              onChange={(e) => setEndTime(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="city">
-            City:
-            <input
-              type="text"
-              id="city"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <button type="submit">Reserve</button>
-      </form>
-    </div>
+    </>
   );
+};
+
+ReservePageFromSideBar.propTypes = {
+  setBgColor: PropTypes.func.isRequired,
 };
 
 export default ReservePageFromSideBar;

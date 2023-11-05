@@ -7,3 +7,9 @@ body {
   background-color: #efefef;
   font-family: 'Titillium Web', sans-serif;
 }
+
+@media screen and (max-width: 767px) {
+  .main {
+    background-size: contain !important;
+  }
+}

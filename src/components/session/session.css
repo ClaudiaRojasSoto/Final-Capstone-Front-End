@@ -13,7 +13,6 @@ body {
 
 /* Estilos de la aplicación */
 .App {
-  background-color: orange !important;
   background-image: url('./car-bg.png');
   background-size: contain;
   background-repeat: no-repeat;

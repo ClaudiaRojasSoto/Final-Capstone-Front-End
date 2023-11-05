@@ -1,10 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './cardetails.css';
-
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
-const CarDetails = ({ car }) => {
+const CarDetails = ({ car, onGoBack }) => {
   const navigate = useNavigate();
   if (!car) {
     return null;
@@ -12,15 +11,16 @@ const CarDetails = ({ car }) => {
 
   return (
     <>
+
       <div className="align-items-center bg-white d-flex justify-content-center custom-high custom-set mt-2">
         <div className="row" />
         <div className="col-12 col-md-7">
           <img src={car.image_url} alt={car.name} />
         </div>
-        <div className="col-12 col-md-5">
+        <div className="col-12 col-md-5 este">
           <div className="d-flex flex-column mx-2">
             <h3 className="text-end p-0 m-0">{car.name}</h3>
-            <p className="mb-4  text-black-50 text-end">
+            <p className="mb-4 mobile-margin text-black-50 text-end">
               £
               {car.finance_fee}
               {' '}
@@ -48,7 +48,7 @@ const CarDetails = ({ car }) => {
                 {car.total_amount_payable}
               </p>
             </h6>
-            <h6 className="d-flex justify-content-between p-1">
+            <h6 className="d-flex justify-content-between px-1">
               <p>
                 Duration:
               </p>
@@ -58,25 +58,37 @@ const CarDetails = ({ car }) => {
                 Months
               </p>
             </h6>
+            <p className="text-end to-left pb-5 padding-mobile">
+              {' '}
+              5.29 APR
+              {' '}
+              Representative
+              {' '}
+            </p>
           </div>
-          <p className="text-end">
-            {' '}
-            5.29 APR
-            {' '}
-            Representative
-            {' '}
-          </p>
+
+          <div className="text-end">
+            <button
+              className="btn bullet-back-btn px-5 text-white"
+              onClick={() => navigate(`/reserve/${car.id}`)}
+              type="button"
+            >
+              Reserve  ▹
+            </button>
+          </div>
         </div>
       </div>
+
       <button
-        className="btn btn-success"
-        onClick={() => navigate(`/reserve/${car.id}`)}
+        className="btn btn-toolbar text-btn-white rounded-back-btn fs-5"
+        onClick={() => onGoBack()}
         type="button"
       >
-        Reserve
+        &laquo;
       </button>
 
     </>
+
   );
 };
 
@@ -91,6 +103,7 @@ CarDetails.propTypes = {
     total_amount_payable: PropTypes.number.isRequired,
     duration: PropTypes.number.isRequired,
   }),
+  onGoBack: PropTypes.func.isRequired,
 };
 
 CarDetails.defaultProps = {

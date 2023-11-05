@@ -6,7 +6,6 @@ import {
   selectRegisterLoading,
   selectRegisterError,
 } from '../../redux/slices/registerSlice';
-import './session.css';
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -28,7 +27,7 @@ const SignUp = () => {
 
   return (
     <>
-      <button className="border-1 btn m-2 rounded-circle" onClick={() => navigate('/')} type="button">
+      <button className="border-1 btn m-2 rounded-circle btn-warning" onClick={() => navigate('/')} type="button">
         Back
       </button>
       <div className="container">
@@ -40,7 +39,7 @@ const SignUp = () => {
               <div className="mb-3">
                 <input
                   type="text"
-                  className="bg-white form-control"
+                  className="form-control"
                   placeholder="User Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -51,7 +50,7 @@ const SignUp = () => {
               <div className="mb-3">
                 <input
                   type="email"
-                  className="bg-white form-control"
+                  className="form-control"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +61,7 @@ const SignUp = () => {
               <div className="mb-3">
                 <input
                   type="password"
-                  className="bg-white form-control"
+                  className="form-control"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

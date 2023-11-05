@@ -1,10 +1,11 @@
 .margin-desktop {
-  margin-top: 3.5rem;
+  margin-top: 1.3rem;
 }
 
 @media screen and (max-width: 767px) {
   .nav-show {
     height: auto !important;
+    margin-top: 0 !important;
   }
 
   .top-mobile {
