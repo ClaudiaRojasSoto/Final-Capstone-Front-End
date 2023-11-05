@@ -19,19 +19,10 @@ const ReservePageFromSideBar = ({ setBgColor }) => {
     if (!currentUser) {
       dispatch(getCurrentUser());
     }
-  }, [dispatch, currentUser]);
 
-  useEffect(() => {
-    if (!currentUser) {
-      dispatch(getCurrentUser());
-    }
-
-    // Cambiar el color de fondo usando setBgColor cuando el componente se monta
     setBgColor('#96bf01');
 
-    // Limpieza al desmontar el componente (opcional)
     return () => {
-      // Restaurar el color de fondo al valor predeterminado o al que desees
       setBgColor('#ffffff');
     };
   }, [dispatch, currentUser, setBgColor]);
@@ -100,10 +91,7 @@ const ReservePageFromSideBar = ({ setBgColor }) => {
       <button className="border-1 btn m-2 rounded-circle btn-warning" onClick={() => navigate('/home')} type="button">
         Back
       </button>
-      <div
-        className="container"
-
-      >
+      <div className="container">
         <div className="row justify-content-center">
           <div className="col-10">
             <div className="card bg-transparent border-light mt-5">
@@ -176,11 +164,12 @@ const ReservePageFromSideBar = ({ setBgColor }) => {
           </div>
         </div>
       </div>
-
     </>
   );
 };
+
 ReservePageFromSideBar.propTypes = {
-  setBgColor: PropTypes.func.isRequired, // setBgColor debe ser una función y es requerida
+  setBgColor: PropTypes.func.isRequired,
 };
+
 export default ReservePageFromSideBar;
