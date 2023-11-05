@@ -9,6 +9,7 @@
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Final Capstone Front End ](#about-project)
   - [🛠 ER Diagram ](#er-diagram)
+  - [Screenshot](#screenshot)
   - [💻 link to back end ](#-link-to-back-end-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -34,6 +35,12 @@
 ## 🛠 ER Diagram <a name="er-diagram"></a>
 
 ![ER Diagram](diagram1.jpeg)
+
+
+## Screenshot <a name="screenshot"></a>
+![Alt text](image.png)
+![Alt text](image-1.png)
+![Alt text](full-img.jpg)
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
