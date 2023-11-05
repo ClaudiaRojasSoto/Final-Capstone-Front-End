@@ -107,11 +107,6 @@ npm start
 - GitHub: [@PabloBona](https://github.com/PabloBona)
 - LinkedIn: [Pablo Bonasera](https://www.linkedin.com/in/pablo-bonasera/)
 
-👤 **Alexandre Ferreira**
-
-- GitHub: [@AlexandreFerreira](https://github.com/alexmedinasf)
-- LinkedIn: [@AlexandreFerreira](https://www.linkedin.com/in/alexmedinasf/)
-
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
 ## 🔭 Future Features <a name="future-features"></a>
