@@ -20,7 +20,7 @@ describe('CarDetails Component', () => {
     render(
       <Router>
         <CarDetails car={carMock} />
-      </Router>
+      </Router>,
     );
 
     expect(screen.getByText(carMock.name)).toBeInTheDocument();
@@ -31,7 +31,7 @@ describe('CarDetails Component', () => {
     render(
       <Router>
         <CarDetails />
-      </Router>
+      </Router>,
     );
 
     expect(screen.queryByText('Test Car')).not.toBeInTheDocument();

@@ -1,5 +1,7 @@
 import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import {
+  render, fireEvent, waitFor, screen,
+} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -40,7 +42,7 @@ describe('Login Component', () => {
         <BrowserRouter>
           <Login />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     fireEvent.change(screen.getByPlaceholderText('Email'), {

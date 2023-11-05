@@ -30,15 +30,13 @@ jest.mock('react-router-dom', () => ({
 
 describe('ReservationList Component', () => {
   beforeEach(() => {
-    useSelector.mockImplementation((callback) =>
-      callback({
-        reservation: {
-          reservations: [],
-          loading: false,
-          error: null,
-        },
-      }),
-    );
+    useSelector.mockImplementation((callback) => callback({
+      reservation: {
+        reservations: [],
+        loading: false,
+        error: null,
+      },
+    }));
   });
 
   afterEach(() => {
@@ -51,7 +49,7 @@ describe('ReservationList Component', () => {
         <Router>
           <ReservationList />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByText(/Your Reservations/i)).toBeInTheDocument();

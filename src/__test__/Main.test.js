@@ -3,22 +3,16 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Main from '../components/Main/Main';
 
-jest.mock('../components/Sidebar/Sidebar', () => {
-  return function DummySidebar() {
-    return <div data-testid="sidebar">Sidebar Component</div>;
-  };
+jest.mock('../components/Sidebar/Sidebar', () => function DummySidebar() {
+  return <div data-testid="sidebar">Sidebar Component</div>;
 });
 
-jest.mock('../components/Hero/Hero', () => {
-  return function DummyHero() {
-    return <div data-testid="hero">Hero Component</div>;
-  };
+jest.mock('../components/Hero/Hero', () => function DummyHero() {
+  return <div data-testid="hero">Hero Component</div>;
 });
 
-jest.mock('../components/Sidebar/SidebarNav', () => {
-  return function DummySidebarNav() {
-    return <div data-testid="sidebarnav">SidebarNav Component</div>;
-  };
+jest.mock('../components/Sidebar/SidebarNav', () => function DummySidebarNav() {
+  return <div data-testid="sidebarnav">SidebarNav Component</div>;
 });
 
 describe('Main Component', () => {

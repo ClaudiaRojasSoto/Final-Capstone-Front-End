@@ -9,7 +9,7 @@ describe('Session Component', () => {
     render(
       <BrowserRouter>
         <Session />
-      </BrowserRouter>
+      </BrowserRouter>,
     );
 
     expect(screen.getByText('Welcome!! Please Log First')).toBeInTheDocument();

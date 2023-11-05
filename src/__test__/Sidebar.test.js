@@ -11,7 +11,7 @@ const store = mockStore({});
 
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
-  useDispatch: () => jest.fn()
+  useDispatch: () => jest.fn(),
 }));
 
 describe('Sidebar Component', () => {
@@ -21,7 +21,7 @@ describe('Sidebar Component', () => {
         <BrowserRouter>
           <Sidebar />
         </BrowserRouter>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByLabelText('Reserve Model')).toBeInTheDocument();

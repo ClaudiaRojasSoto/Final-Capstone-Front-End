@@ -6,28 +6,23 @@ import configureMockStore from 'redux-mock-store';
 import '@testing-library/jest-dom';
 import Hero from '../components/Hero/Hero';
 
-jest.mock('../components/CardCar/CardCar', () => {
-  return function DummyCardCar() {
-    return <div>CardCar Component</div>;
-  };
+jest.mock('../components/CardCar/CardCar', () => function DummyCardCar() {
+  return <div>CardCar Component</div>;
 });
 
 const mockStore = configureMockStore();
 const store = mockStore({
   car: {
-    cars: []
-  }
+    cars: [],
+  },
 });
 
 describe('Hero Component', () => {
   beforeEach(() => {
-
-    global.fetch = jest.fn(() =>
-      Promise.resolve({
-        json: () => Promise.resolve([]),
-        ok: true
-      })
-    );
+    global.fetch = jest.fn(() => Promise.resolve({
+      json: () => Promise.resolve([]),
+      ok: true,
+    }));
   });
 
   afterEach(() => {
@@ -40,10 +35,9 @@ describe('Hero Component', () => {
         <Router>
           <Hero />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
-
   });
 });

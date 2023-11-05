@@ -16,7 +16,7 @@ describe('CarForm Component', () => {
         <Router>
           <CarForm />
         </Router>
-      </Provider>
+      </Provider>,
     );
 
     expect(screen.getByLabelText(/name:/i)).toBeInTheDocument();
