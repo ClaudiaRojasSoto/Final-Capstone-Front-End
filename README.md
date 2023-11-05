@@ -33,7 +33,7 @@
 
 ## 🛠 ER Diagram <a name="er-diagram"></a>
 
-![ER Diagram](diagram.jpeg)
+![ER Diagram](diagram1.jpeg)
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
