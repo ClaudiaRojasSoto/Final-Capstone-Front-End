@@ -33,7 +33,7 @@
 
 ## 🛠 ER Diagram <a name="er-diagram"></a>
 
-![ER Diagram](diagram.jpeg)
+![ER Diagram](diagram1.jpeg)
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
@@ -106,11 +106,6 @@ npm start
 
 - GitHub: [@PabloBona](https://github.com/PabloBona)
 - LinkedIn: [Pablo Bonasera](https://www.linkedin.com/in/pablo-bonasera/)
-
-👤 **Alexandre Ferreira**
-
-- GitHub: [@AlexandreFerreira](https://github.com/alexmedinasf)
-- LinkedIn: [@AlexandreFerreira](https://www.linkedin.com/in/alexmedinasf/)
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
 
