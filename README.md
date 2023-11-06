@@ -1,15 +1,20 @@
+<div align="center">
+
+![EED](app.png)
+
 <a name="readme-top"></a>
 
-  <h3><b>Final Capstone Front End</b></h3>
+  <h3><b>final_capstone_back_end</b></h3>
 
 </div>
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Final Capstone Front End ](#about-project)
-  - [🛠 ER Diagram ](#er-diagram)
-  - [💻 link to back end ](#-link-to-back-end-)
+- [📖 Final Capstone Front End ](#-final-capstone-front-end-)
+  - [🛠 ER Diagram ](#-er-diagram-)
+  - [💻 Link to Back End ](#-link-to-back-end-)
+  - [💻 link to Kanban board information ](#-link-to-kanban-board-information-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -25,8 +30,6 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
   - [📝 License ](#-license-)
-
-
 # 📖 Final Capstone Front End <a name="about-project"></a>
 
 **Final Capstone Front End** The front-end component of this final capstone project is developed using React.js, designed to provide an intuitive user interface for managing reservations or appointments for test drives of cars. It communicates with the back-end API built with Ruby on Rails.
@@ -42,6 +45,19 @@
 [Link to Back End](https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End)
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
+
+## 💻 link to Kanban board information <a name="built-with"></a>
+
+[Link to Kanban Board](https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End/projects/1)
+
+[Initial state](https://github.com/ClaudiaRojasSoto/Final-Capstone-Back-End/issues/16)
+
+This project was completed by two of the three original Team members:
+
+- Pablo Bonasera
+- Claudia Rojas
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -133,6 +149,7 @@ If you find this project helpful, feel free to contribute or give it a star. You
 
 ## 🙏 Acknowledgments <a name="acknowledgments"></a>
 
+- Behance and Murat Korkmaz for the [original design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 - Microverse for providing the opportunity to learn in a collaborative environment.
 - React.js Documentation for valuable resources on React development.
 - GitHub for version control and collaboration tools.
