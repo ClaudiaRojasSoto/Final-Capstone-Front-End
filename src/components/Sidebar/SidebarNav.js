@@ -7,14 +7,13 @@ import carRental from './carRental.png';
 import 'boxicons';
 import './sidebar.css';
 
-function Sidebar() {
+const Sidebar = () => {
   const dispatch = useDispatch();
   const [expanded, setExpanded] = useState(false);
 
   const handleDeleteClick = () => {
     dispatch(toggleDeleteMode());
     setExpanded(false);
-    // Otras operaciones de eliminación si las tienes
   };
 
   return (
@@ -41,6 +40,6 @@ function Sidebar() {
       </Navbar.Collapse>
     </Navbar>
   );
-}
+};
 
 export default Sidebar;
