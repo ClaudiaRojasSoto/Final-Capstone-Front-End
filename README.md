@@ -23,6 +23,7 @@
     - [Setup](#setup)
     - [Install](#install)
     - [Usage](#usage)
+    - [Run tests](#run-tests)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -111,6 +112,35 @@ To run the project, execute the following command:
 
 npm start
 
+### Run tests <a name="tests"></a>
+To run the frontend tests, follow these steps:
+
+### Prerequisites
+
+Before running the tests, ensure you have the following installed:
+
+- Node.js: You need Node.js to execute the test scripts.
+- npm: npm is used to manage packages in your React project.
+
+Additionally, make sure you have installed the following testing extensions:
+
+- jest-fetch-mock: Used for mocking fetch requests.
+- redux-mock-store: Used for mocking Redux store.
+- redux-thunk: Used for testing Redux thunks.
+
+### Running Tests
+
+Execute the following command to run the tests:
+
+```bash
+npm test
+```
+This command will run the test suites and provide you with the test results and coverage information.
+
+
+<p align="right"><a href="#readme-top">back to top</a></p>
+```
+
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Claudia Rojas**
@@ -173,5 +203,3 @@ If you find this project helpful, feel free to contribute or give it a star. You
 This project is licensed under the MIT License - you can click here to have more details [MIT](MIT.md).
 
 <p align="right"\><a href="#readme-top"\>back to top\</a></p>
-
----------------------
