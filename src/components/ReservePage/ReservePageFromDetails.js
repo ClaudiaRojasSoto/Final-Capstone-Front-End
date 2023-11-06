@@ -40,6 +40,13 @@ const ReservePageFromDetails = () => {
 
   const handleReservation = async (e) => {
     e.preventDefault();
+
+    const startDateTime = new Date(startTime);
+    const currentDateTime = new Date();
+    if (startDateTime < currentDateTime) {
+      alert('Start time must be in the future.');
+      return;
+    }
     if (!currentUser) {
       alert('Please log in to make a reservation.');
       return;
