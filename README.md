@@ -139,7 +139,6 @@ This command will run the test suites and provide you with the test results and 
 
 
 <p align="right"><a href="#readme-top">back to top</a></p>
-```
 
 ## 👥 Authors <a name="authors"></a>
 
