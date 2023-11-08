@@ -8,7 +8,7 @@
 
 </div>
 
-# 📗 Table of Contents
+# 📗 Table of Content
 
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Final Capstone Front End ](#-final-capstone-front-end-)
