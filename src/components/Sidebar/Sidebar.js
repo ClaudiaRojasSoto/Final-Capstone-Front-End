@@ -25,7 +25,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link text-black reservation-text" aria-label="My Reservations" href="/user_reservations">MY RESERVATIONS</a>
+          <Link to="/user_reservations" className="nav-link text-black reservation-text" aria-label="My Reservations">MY RESERVATIONS</Link>
         </li>
         <li className="nav-item">
           <Link to="/addcar" className="nav-link active text-black" aria-label="Add Car">ADD CARS</Link>
