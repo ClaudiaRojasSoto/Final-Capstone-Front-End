@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/cars', {
+        const response = await fetch('https://driver-app-14gi.onrender.com/api/cars', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

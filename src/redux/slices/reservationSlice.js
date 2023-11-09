@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // Thunk para obtener las reservas del usuario
 export const fetchUserReservations = createAsyncThunk('reservation/fetchUserReservations', async () => {
-  const response = await fetch('http://localhost:3000/api/user_reservations', {
+  const response = await fetch('https://driver-app-14gi.onrender.com/api/user_reservations', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ export const fetchUserReservations = createAsyncThunk('reservation/fetchUserRese
 export const deleteReservation = createAsyncThunk(
   'reservation/deleteReservation',
   async (reservationId) => {
-    const response = await fetch(`http://localhost:3000/api/reservations/${reservationId}`, {
+    const response = await fetch(`https://driver-app-14gi.onrender.com/api/reservations/${reservationId}`, {
       method: 'DELETE',
       credentials: 'include',
     });

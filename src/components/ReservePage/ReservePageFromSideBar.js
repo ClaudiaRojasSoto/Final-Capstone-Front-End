@@ -30,7 +30,7 @@ const ReservePageFromSideBar = ({ setBgColor }) => {
   useEffect(() => {
     const fetchCars = async () => {
       try {
-        const response = await fetch('http://localhost:3000/api/cars', {
+        const response = await fetch('https://driver-app-14gi.onrender.com/api/cars', {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -71,7 +71,7 @@ const ReservePageFromSideBar = ({ setBgColor }) => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/cars/${selectedCarId}/reservations`, {
+      const response = await fetch(`https://driver-app-14gi.onrender.com/api/cars/${selectedCarId}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

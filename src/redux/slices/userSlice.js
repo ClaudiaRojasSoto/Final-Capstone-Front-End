@@ -5,7 +5,7 @@ export const getCurrentUser = createAsyncThunk(
   'user/getCurrentUser',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('http://localhost:3000/api/users/current', {
+      const response = await fetch('https://driver-app-14gi.onrender.com/api/users/current', {
         method: 'GET',
         credentials: 'include',
       });

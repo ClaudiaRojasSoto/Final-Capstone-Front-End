@@ -16,7 +16,7 @@ const ReservePageFromDetails = () => {
   useEffect(() => {
     const fetchCarDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/cars/${carId}`);
+        const response = await fetch(`https://driver-app-14gi.onrender.com/api/cars/${carId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch car details.');
         }
@@ -66,7 +66,7 @@ const ReservePageFromDetails = () => {
     };
 
     try {
-      const response = await fetch(`http://localhost:3000/api/cars/${carId}/reservations`, {
+      const response = await fetch(`https://driver-app-14gi.onrender.com/api/cars/${carId}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

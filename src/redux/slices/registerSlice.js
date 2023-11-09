@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const registerAsync = createAsyncThunk('register/registerAsync', async ({ name, email, password }) => {
-  const response = await fetch('http://localhost:3000/api/users', {
+  const response = await fetch('https://driver-app-14gi.onrender.com/api/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

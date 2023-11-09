@@ -12,7 +12,7 @@ export const deleteCar = createAsyncThunk(
   'car/deleteCar',
   async (carId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/cars/${carId}`, {
+      const response = await fetch(`https://driver-app-14gi.onrender.com/api/cars/${carId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
@@ -98,7 +98,7 @@ export const createCar = (carData) => async (dispatch) => {
     formData.append('car[removed]', carData.removed);
     formData.append('car[image]', carData.image);
 
-    const response = await fetch('http://localhost:3000/api/cars', {
+    const response = await fetch('https://driver-app-14gi.onrender.com/api/cars', {
       method: 'POST',
       body: formData,
     });
