@@ -20,13 +20,13 @@ const Hero = () => {
         });
 
         if (!response.ok) {
-          throw new Error('Error fetching cars');
+          console.error('Error en la respuesta:', response.status);
         }
 
         const data = await response.json();
         setCarsData(data);
       } catch (error) {
-        throw new Error('Error fetching cars');
+        console.error('Error al procesar la solicitud:', error);
       }
     };
 
