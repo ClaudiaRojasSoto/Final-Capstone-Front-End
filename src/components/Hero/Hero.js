@@ -20,7 +20,11 @@ const Hero = () => {
         });
 
         if (!response.ok) {
-          console.error('Error en la respuesta:', response.status);
+          throw new Error(`Error en la solicitud: ${response.status}`);
+        }
+        const text = await response.text();
+        if (!text) {
+          throw new Error('Respuesta vacía del servidor');
         }
 
         const data = await response.json();
