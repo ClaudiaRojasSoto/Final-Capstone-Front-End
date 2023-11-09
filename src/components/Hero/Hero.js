@@ -11,7 +11,7 @@ const Hero = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://driver-app-14gi.onrender.com/api/cars', {
+        const response = await fetch('http://localhost:3000/api/cars', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -20,17 +20,13 @@ const Hero = () => {
         });
 
         if (!response.ok) {
-          throw new Error(`Error en la solicitud: ${response.status}`);
-        }
-        const text = await response.text();
-        if (!text) {
-          throw new Error('Respuesta vacía del servidor');
+          throw new Error('Error fetching cars');
         }
 
         const data = await response.json();
         setCarsData(data);
       } catch (error) {
-        console.error('Error al procesar la solicitud:', error);
+        throw new Error('Error fetching cars');
       }
     };
 
