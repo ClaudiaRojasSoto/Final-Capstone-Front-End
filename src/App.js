@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Main />} />
           <Route path="/addcar" element={<CarForm />} />
-          <Route path="/user_reservations" element={<ReservationList />} />
+          <Route path="/api/user_reservations" element={<ReservationList />} />
           <Route path="/reserve/:carId" element={<ReservePageFromDetails />} />
           <Route path="/reserve" element={<ReservePageFromSideBar setBgColor={setBgColor} />} />
         </Routes>
