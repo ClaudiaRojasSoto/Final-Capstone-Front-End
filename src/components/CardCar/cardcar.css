@@ -1,0 +1,87 @@
+h6,
+h2 {
+  margin-bottom: 0 !important;
+}
+
+.swiper img {
+  max-height: 300px !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #97bf0f;
+  top: var(--swiper-navigation-top-offset, 42%);
+}
+
+.swiper-button-prev::after {
+  content: "◀";
+}
+
+.swiper-button-next::after {
+  content: "▶";
+}
+
+.description-text {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.text-size {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.long-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom {
+  margin-top: 1rem !important;
+}
+
+.custom-mobile-view {
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 767px) {
+  .text-size {
+    font-size: 10px;
+    font-weight: 300;
+  }
+
+  .custom-h {
+    min-height: 60px;
+  }
+
+  .long-description {
+    overflow: visible;
+    text-overflow: inherit;
+    white-space: inherit;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .text-size {
+    font-size: 14px;
+  }
+
+  .card-name {
+    font-size: 20px;
+  }
+
+  .custom-h {
+    min-height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .text-size {
+    font-size: 14px;
+  }
+
+  .card-name {
+    font-size: 24px;
+  }
+}

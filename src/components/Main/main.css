@@ -1,0 +1,23 @@
+
+@media (max-width: 767px) {
+  .nav-show {
+    display: flex;
+  }
+
+  .side-hide {
+    display: none !important;
+  }
+
+  .rigth-border {
+    width: 100%;
+  }
+
+  .d-show {
+    display: block !important;
+    background-color: rgb(255, 255, 255) !important;
+  }
+
+  .vh-100 {
+    height: calc(100vh - 66px) !important;
+  }
+}

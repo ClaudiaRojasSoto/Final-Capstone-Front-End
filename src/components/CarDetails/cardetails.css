@@ -1,0 +1,61 @@
+.rounded-back-btn {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 8px 14px 9px 34px;
+  background-color: #97bf0f;
+  font-weight: 700;
+}
+
+.bullet-back-btn {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 9px 14px 9px 14px;
+  background-color: #97bf0f;
+  font-weight: 700;
+}
+
+.text-btn-white {
+  color: #fff;
+}
+
+.custom-high {
+  height: 65vh !important;
+}
+
+.to-left {
+  text-align: left !important;
+  padding-left: 12px;
+}
+
+.btn:hover:hover {
+  background-color: #97bf0f !important;
+}
+
+p {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  .custom-set {
+    flex-direction: column !important;
+  }
+
+  img {
+    width: 50% !important;
+  }
+
+  .mobile-margin {
+    margin-bottom: 0 !important;
+  }
+
+  .padding-mobile {
+    padding: 0 !important;
+  }
+
+  .to-left {
+    text-align: inherit !important;
+    padding-left: 0;
+  }
+}

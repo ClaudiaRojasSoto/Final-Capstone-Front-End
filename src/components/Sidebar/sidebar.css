@@ -1,0 +1,69 @@
+.no-pad {
+  padding: 0 !important;
+}
+
+.icon,
+svg {
+  font-size: 10px;
+}
+
+.reservation-text {
+  font-size: 15px;
+}
+
+.nav-link {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  background-color: #98bf11;
+  color: #fff !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.box-icon {
+  font-size: 90%;
+}
+
+.rigth-border {
+  border-right: 3px solid #efefef;
+}
+
+.custom-grow {
+  flex: 1;
+}
+
+.navbar-toggler {
+  border: none !important;
+  margin-right: 1rem !important;
+}
+
+@media (max-width: 567px) {
+  .nav-link {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-brand img {
+    max-width: 5rem !important;
+  }
+}
+
+@media (max-width: 852px) {
+  .custom-size {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 1000px) {
+  .custom-size {
+    font-size: 20px !important;
+  }
+}

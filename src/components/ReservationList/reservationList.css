@@ -1,0 +1,55 @@
+.fs-10 {
+  font-size: 16px !important;
+}
+
+.reservation-item {
+  list-style-type: none;
+  background-color: rgba(255, 177, 62, -0.35);
+  border: 2px solid white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.reserve-form {
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 0;
+}
+
+.reserve-form button {
+  margin: 0;
+}
+
+ul {
+  padding: 0 2rem !important;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and   (max-width: 500px) {
+  .reservation-item {
+    font-size: 0.8rem;
+  }
+
+  .btn-text {
+    font-size: 0.6rem;
+  }
+}
+
+@media screen and   (max-width: 767px) {
+  .text-white {
+    font-size: 0.8rem;
+  }
+
+  .fs-10 {
+    font-size: 10px !important;
+  }
+}
